@@ -1,0 +1,8 @@
+{
+  "name": "rkp",
+  "description": "Robert Konklewski's Claude Code skill set: handoffs, reports, audits, metaprompting, and research workflow helpers",
+  "version": "0.1.0",
+  "author": {
+    "name": "Robert Konklewski"
+  }
+}

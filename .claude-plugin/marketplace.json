@@ -1,0 +1,31 @@
+{
+  "name": "rkp-skills",
+  "owner": {
+    "name": "Robert Konklewski"
+  },
+  "metadata": {
+    "description": "Robert Konklewski's Claude Code skills",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rkp",
+      "description": "Skill set: handoffs, reports, audits, metaprompting, and research workflow helpers",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/apply-handoff",
+        "./skills/attack-duck",
+        "./skills/citation",
+        "./skills/consistency-audit",
+        "./skills/data-investigation",
+        "./skills/epistemic-audit",
+        "./skills/handoff",
+        "./skills/handoff-edit",
+        "./skills/metaprompt-engineer",
+        "./skills/report",
+        "./skills/structural-audit"
+      ]
+    }
+  ]
+}
