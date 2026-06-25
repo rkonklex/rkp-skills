@@ -76,29 +76,19 @@ stage.
   consistency conflict has no clean resolution; an edit would exceed the dossier's stated scope on
   a canonical/stable document; or an `AGENTS.md` invariant would break.
 
-## Git protocol — the index is the owner's
+## Stage gate — the owner closes each stage
 
-The working tree is yours to edit; **the index and history are the owner's review surface** (the
-owner stages work to inspect diffs). State-changing git commands happen only at checkpoint gates,
-never spontaneously — a git mutation outside a gate is a protocol breach.
+Execute the plan one stage at a time; finish a stage fully before the next. At each stage boundary
+(a **checkpoint gate**): stop, report the files changed and a proposed commit message, and wait for
+an explicit owner go before continuing. The owner may review, commit himself, or have you commit —
+either way the next stage starts only on his go.
 
-- **Commit mode is set at the plan gate:** agent checkpoint commits (the protocol below), owner
-  commits, or working-tree only (no git mutations at all — e.g. cleanup layered on an existing
-  staged change). Ask; don't assume. In working-tree-only mode, stage boundaries still gate via
-  the changed-files report.
-- **Checkpoint gate** at each stage boundary: report the files changed and a proposed commit
-  message; wait for an explicit go. The owner may instead commit himself — then wait for his
-  confirmation before the next stage.
-- **On go, guarded commands only:**
-  1. `git status --porcelain` — if anything is staged that this gate's approval doesn't cover,
-     stop and ask; never assume staged content is disposable.
-  2. New files only: `git add -- <named file>` (each file named explicitly).
-  3. Commit by pathspec: `git commit -m "<msg>" -- <named files>` — this commits only the named
-     files and leaves the rest of the index untouched.
-  - Never a bare `git commit`; never `git add -A` / `-u` / `.`; nothing beyond add/commit — no
-    reset, restore, stash, rebase, or push. Those are the owner's.
-- **Checkpoints are restart backups:** if the session must end mid-plan, end it at a committed
-  coherent stage, never half-applied.
+- **Defer commit mechanics to the host.** Who commits, staging discipline, and which version-control
+  actions are allowed are the project's policy — follow the host `AGENTS.md` / `AUTHORING.md`. Absent
+  one: commit only the files this gate's approval covers, and never run destructive or
+  history-rewriting git on your own (reset, rebase, push, force) — those stay the owner's.
+- **Checkpoints are restart backups:** if the session must end mid-plan, end at a closed, coherent
+  stage, never half-applied.
 
 ## Context watch
 
