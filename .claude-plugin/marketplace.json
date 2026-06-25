@@ -14,7 +14,7 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/apply-handoff",
+        "./skills/apply-edit",
         "./skills/attack-duck",
         "./skills/citation",
         "./skills/consistency-audit",

@@ -1,40 +1,44 @@
 ---
-description: "Execute a HANDOFF_*.md against critical documents with receiver-side discipline: verify evidence before editing, hard plan gate, guarded checkpoint commits, information-preserving rewrites, coherence sweep, structured closure."
-argument-hint: "<path to HANDOFF_*.md> — the handoff to execute"
+description: "Execute a handoff or a direct edit brief against critical documents with receiver-side discipline: verify evidence before editing, hard plan gate, owner-gated stages, information-preserving rewrites, coherence sweep, structured closure."
+argument-hint: "<path to a HANDOFF_*.md, or an edit brief> — the change set to execute"
 disable-model-invocation: true
 ---
 
-You are the **receiving session** of a handoff. The author froze what's settled and pointed at
-what's live; your side of the contract is the execution discipline below — it holds regardless of
-how good or bad the particular handoff is.
+You are the **executing session** for a set of edits to critical documents. Usually a handoff hands
+them over — the author froze what's settled and pointed at what's live — but the input may instead be
+a direct edit brief. Your side of the contract is the execution discipline below; it holds regardless
+of how good or bad the particular input is.
 
 ## Intake
 
-1. **Target:** $ARGUMENTS = path to the handoff. Read it in full. No argument → ask; never guess
-   which handoff is meant.
-2. **Rules first:** read `AGENTS.md` in the handoff's folder (or nearest parent) before any other
+1. **Target:** $ARGUMENTS = path to a handoff or a direct edit brief. Read it in full. No argument →
+   ask; never guess what to execute.
+2. **Rules first:** read `AGENTS.md` in the documents' folder (or nearest parent) before any other
    corpus file, then the `AUTHORING.md` beside it if present — the authoring procedures (anchors,
    notation, output templates, maturity tagging, lineage/profile citation) that every corpus edit must
-   follow. Their invariants and care levels override anything implied by the handoff or by convenience.
-3. **Classify the handoff:**
+   follow. Their invariants and care levels override anything implied by the input or by convenience.
+3. **Classify the input:**
    - **Edit dossier** (per-change entries with evidence, ripple, care rules — `/handoff-edit`
      output): full protocol below.
    - **Continuation** (thread state + next actions — `/handoff` output): same gates apply, but
      Verify covers the named next actions instead of per-change entries.
-4. **Source discipline:** read only the sources the handoff names as live, plus the documents it
+   - **Direct edit brief** (changes described in the prompt or a file, not produced by `/handoff*`):
+     same gates apply; treat its claims as unverified — derive the evidence and ripple yourself
+     before editing, since no author did.
+4. **Source discipline:** read only the sources the input names as live, plus the documents it
    edits. Never read `scratch/`; read other `HANDOFF_*` files only if this one names them.
 
 ## Verify — before any edit
 
-- **Anti-anchoring:** the handoff is input to verify, not authority. Where it conflicts with the
+- **Anti-anchoring:** the input is to verify, not authority. Where it conflicts with the
   current corpus, the corpus may have moved since it was written — flag the conflict, don't force
-  the handoff through.
+  it through.
 - **Re-derive by evidence tag:** tags follow the host corpus's basis scheme if it declares one — the axis for what a claim *rests on* (origin/provenance), not its validation status or file placement — else the dossier defaults **[V]** verified by data · **[I]** inferred · **[P]** provisional. Per tag: **[V]** — spot-check that the cited source exists and says it;
   **[I]** — re-derive the inference from the sources yourself; **[P]** — treat as movable, never
   write into a stable document. Untagged load-bearing claims get [I] treatment.
 - **Authority check:** a document is a valid basis only if it is committed/owner-published or the
-  handoff explicitly names it as a live source. Un-reviewed drafts and uncommitted leftovers are
-  not authority — flag any the handoff leans on.
+  input explicitly names it as a live source. Un-reviewed drafts and uncommitted leftovers are
+  not authority — flag any the input leans on.
 - **Plan:** produce the execution plan — ordered stages; per stage the files touched; which edits
   are owner-gated (canonical documents, items marked as needing approval); the dossier's open
   calls with your proposed resolutions; anything that failed verification.
@@ -126,4 +130,4 @@ Report, in this order:
 4. Verification run vs not run — stated plainly.
 
 Then **propose, don't write**: `/report` for a durable record; a continuation handoff if residue
-remains. The handoff file itself is owner-managed — don't delete, move, or annotate it.
+remains. The handoff or brief file itself is owner-managed — don't delete, move, or annotate it.
