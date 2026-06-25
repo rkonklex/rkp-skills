@@ -29,7 +29,7 @@ how good or bad the particular handoff is.
 - **Anti-anchoring:** the handoff is input to verify, not authority. Where it conflicts with the
   current corpus, the corpus may have moved since it was written — flag the conflict, don't force
   the handoff through.
-- **Re-derive by evidence tag:** **[V]** — spot-check that the cited source exists and says it;
+- **Re-derive by evidence tag:** tags follow the host corpus's basis scheme if it declares one — the axis for what a claim *rests on* (origin/provenance), not its validation status or file placement — else the dossier defaults **[V]** verified by data · **[I]** inferred · **[P]** provisional. Per tag: **[V]** — spot-check that the cited source exists and says it;
   **[I]** — re-derive the inference from the sources yourself; **[P]** — treat as movable, never
   write into a stable document. Untagged load-bearing claims get [I] treatment.
 - **Authority check:** a document is a valid basis only if it is committed/owner-published or the
@@ -121,7 +121,7 @@ One light pass over the touched documents read together (not per-edit):
 - **Anchor check:** every `{#id}` and cross-reference added or repointed resolves.
 - **Invariant spot-check:** the `AGENTS.md`/index rules relevant to the touched documents (link
   direction, no code in docs, where volatile values live) still hold.
-- **Render if available:** run the corpus build (e.g. `quarto render`) when the tool is present;
+- **Render if available:** run the corpus build (e.g. a docs/site build like `quarto render`) when the tool is present;
   if unavailable, report that plainly — never imply render validation that didn't run.
 
 Fixes from this pass go through a final checkpoint gate.

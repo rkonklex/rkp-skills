@@ -1,6 +1,6 @@
 ---
 description: "Hand off careful edits to critical documents as an evidence-backed change dossier for a fresh session to execute. Writes HANDOFF_<topic>.md."
-argument-hint: "<topic> — names the document-edit thread, e.g. /handoff-edit clip-boundary-spec"
+argument-hint: "<topic> — names the document-edit thread, e.g. /handoff-edit auth-retry-policy"
 ---
 
 You're writing a **handoff-edit**: a brief that hands the careful editing of critical documents to a fresh session. Research and decisions are done; the edits aren't made here because this context is heavy and an overflow mid-edit could compact and corrupt the documents. A capable model makes them in a clean session with room to deliberate — reading the docs fresh, verifying the case, writing the prose itself, watching the whole corpus for consistency.
@@ -23,7 +23,7 @@ For continuing or splitting a thread, use `/handoff`.
 ### Change dossier — per intended change
 - **What & where.** Target doc + section, what it says now, what's wrong/missing. Name it precisely; **don't pre-write the replacement** — give intent, not keystrokes.
 - **Why.** The driving conclusion; alternatives weighed and rejected; cost of leaving it.
-- **Evidence, tagged by basis.** What justifies the change, or where it lives — and how solid it is, so the receiver knows how far to re-derive: take well-supported claims as-is, re-derive inferences from the sources, treat provisional ones as movable (never carve into a stable doc). For measurement-backed work, use the project tags: **[V]** verified by data · **[I]** inferred · **[P]** provisional.
+- **Evidence, tagged by basis.** What justifies the change, or where it lives — and how solid it is, so the receiver knows how far to re-derive: take well-supported claims as-is, re-derive inferences from the sources, treat provisional ones as movable (never carve into a stable doc). For measurement or analytical work, tag by basis. If the host corpus declares a basis scheme — the axis for what a claim *rests on* (origin/provenance), not its validation status (maturity) or file placement (commitment) — use it; it may sit in `AGENTS.md` or a doc that file points to (e.g. `AUTHORING.md`), and you stamp in its vocabulary. Absent one, default to **[V]** verified by data · **[I]** inferred · **[P]** provisional.
 - **Suggested direction.** Proposed wording, marked as an improvable starting point, not a mandate.
 - **Consistency & ripple.** Where this reaches — invariants, sibling docs, terminology, dependent claims. Say where to look.
 - **Open calls.** Where you were unsure; ask the receiver to deliberate, and what tips it.

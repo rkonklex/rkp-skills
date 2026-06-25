@@ -1,6 +1,6 @@
 ---
 description: "Attack Duck: an adversarial thinking partner for a half-formed idea, observation, or decision. Develops it through dialogue — surfaces your hidden assumptions and blind spots, pushes back instead of agreeing, and crystallizes the result into a NOTE_<topic>.md written for you. Use to talk through / pressure-test / structure an idea, judge whether it's worth doing, or make sense of observations against code, docs, or an article. Grounded against a corpus, or open."
-argument-hint: "<idea or topic> [corpus path] — e.g. /attack-duck a new SNR metric for clipping  ./some_project"
+argument-hint: "<idea or topic> [corpus path] — e.g. /attack-duck add a caching layer  ./some_project"
 disable-model-invocation: true
 ---
 
