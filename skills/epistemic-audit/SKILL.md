@@ -103,5 +103,5 @@ When the user asks to save — immediately after the audit or after a discussion
 - **Classify each finding as gap or error.** A gap is a missing piece of the model; an error is a mistake in the documents. Do not conflate them.
 - **Ground every domain claim.** Support it from the documents or from standard domain knowledge; if neither supports it, say so explicitly rather than asserting it.
 - **Respect the harvested domain constraints.** Honor the hard limits and known failure modes the corpus declares (e.g. dimensionality, topology, prior trust-breaks); reason inside them, and flag — never silently cross — any proposal that would violate them.
-- **Stay diagnostic.** Surface gaps, assumptions, and frame challenges; do not propose redesigns or rewrites — that is a different skill.
+- **Stay diagnostic; route remediation.** Surface gaps, assumptions, and frame challenges; do not propose redesigns or rewrites. Acting on a finding is a separate, gated job — point the owner to `/handoff-edit`, which stages the change as an evidence-tagged dossier for `/apply-edit` to execute.
 - **Skip this skill's own outputs.** Never read any file matching `epistemic-audit-*.md` — they are artifacts of previous runs, not corpus content.

@@ -70,7 +70,9 @@ canonical base document), name it — but do not pick a winner or edit. Under
 **before any edit, read the target folder's `AGENTS.md` and any authoring-rules
 doc it names (e.g. `AUTHORING.md`)** — a mechanical anchor repair is still a
 corpus edit and must follow the host's anchor/notation contract. List every
-semantic contradiction for the owner unresolved even then.
+semantic contradiction for the owner unresolved even then — `--fix` is
+mechanical-only and never resolves one. To act on a semantic finding, the owner
+routes it to `/handoff-edit` (staged as a dossier for `/apply-edit`).
 
 **Format:** findings ordered by severity. Per finding —
 `ID · class · severity · A: file#anchor "quote" · B: file#anchor "quote" ·

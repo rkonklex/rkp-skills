@@ -85,6 +85,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 - **handoff-edit** → **apply-edit** is its own author→receiver pair for changes to critical documents.
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
 - **structural-audit** emits a restructuring plan that **apply-edit** can carry out.
+- **consistency-audit** and **epistemic-audit** flag findings; to act on one, the owner routes it through **handoff-edit** → **apply-edit**.
 - **citation** captures an artifact's failures; **metaprompt-engineer** rebuilds the artifact (these skills included).
 
 ## Structure
