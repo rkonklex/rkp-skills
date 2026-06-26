@@ -11,21 +11,7 @@
     {
       "name": "rkp",
       "description": "Skill set: handoffs, reports, audits, metaprompting, and research workflow helpers",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/apply-edit",
-        "./skills/attack-duck",
-        "./skills/citation",
-        "./skills/consistency-audit",
-        "./skills/data-investigation",
-        "./skills/epistemic-audit",
-        "./skills/handoff",
-        "./skills/handoff-edit",
-        "./skills/metaprompt-engineer",
-        "./skills/report",
-        "./skills/structural-audit"
-      ]
+      "source": "./"
     }
   ]
 }
