@@ -77,6 +77,11 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Dead rules:** directives that outlived the failure they patched, accreted
   patch-on-patch. Deletion is a first-class fix; every rule must still pay
   rent.
+- **Additive default:** answering a flag by adding text instead of cutting or
+  recasting — a clause bolted onto a rule to settle a past objection, where the
+  rule wanted cutting or a rewrite. The dynamic under bloat and dead rules; fix
+  by subtraction. Binds your own Iterate pass too: resolve feedback by removing
+  or recasting a rule, never by appending one to patch it.
 
 ## Beyond prose (escalation verdict)
 - **Name the mechanism:** when an expectation cannot be enforced by text — it
