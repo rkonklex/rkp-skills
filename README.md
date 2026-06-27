@@ -5,7 +5,7 @@ Robert Konklewski's Claude Code skills, packaged as a plugin (`rkp`).
 These are **thinking and writing disciplines for research-style work** — developing an idea,
 auditing a corpus of documents, handing work to a fresh session, recording what was decided, and
 engineering the instructions that drive agents. They lean on a shared house style: cold-readable
-artifacts, claims tagged by how solid they are, anti-sycophancy, and "flag for the owner, don't
+artifacts, claims tagged by where they come from (with confidence noted separately), anti-sycophancy, and "flag for the owner, don't
 silently decide." Most are corpus-aware — they read a folder's `AGENTS.md` / `AUTHORING.md` and
 conform to the host project's conventions rather than imposing their own.
 
@@ -47,7 +47,7 @@ A small pipeline for moving work between sessions without losing or corrupting i
 | Skill | What it does |
 |---|---|
 | **handoff** | Briefs a *fresh* session to **continue** an unfinished thread (context running out) or **split** off a side-thread. Writes a cold-readable, forward-looking `HANDOFF_<topic>.md`: what's settled vs open, what to read, the decisive next action. **Use when** you're about to run out of context, or want to spin a tangent into its own thread. |
-| **report** | Writes a durable, backward-looking `REPORT_<topic>.md` that **stands alone** — a reader with neither the chat nor the source handoff can follow the work and audit it. Dual-purpose: a human reference *and* auditable input for an AI review, with every claim tagged by basis. **Use when** capturing a finished session for the record or for review. |
+| **report** | Writes a durable, backward-looking `REPORT_<topic>.md` that **stands alone** — a reader with neither the chat nor the source handoff can follow the work and audit it. Dual-purpose: a human reference *and* auditable input for an AI review, with every claim tagged by its origin. **Use when** capturing a finished session for the record or for review. |
 | **data-investigation** | A partner for **investigating data that's partial, sensitive, or non-authoritative** — it designs the probe, you run it and paste back only the reduced result. It picks the smallest probe that discriminates between the live explanations and pushes back when a conclusion outruns the evidence. **Use when** chasing a metric, anomaly, or regression you can only see in part. |
 
 ### Edit critical documents safely
@@ -85,7 +85,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 - **handoff-edit** → **apply-edit** is its own author→receiver pair for changes to critical documents.
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
 - **structural-audit** emits a restructuring plan that **apply-edit** can carry out.
-- **consistency-audit** and **epistemic-audit** flag findings; to act on one, the owner routes it through **handoff-edit** → **apply-edit**.
+- **consistency-audit** and **epistemic-audit** flag findings; the owner adjudicates — pressure-testing a single finding with **attack-duck** when it's in doubt — then routes the ones he accepts through **handoff-edit** → **apply-edit**.
 - **citation** captures an artifact's failures; **metaprompt-engineer** rebuilds the artifact (these skills included).
 
 ## Structure

@@ -71,8 +71,9 @@ canonical base document), name it — but do not pick a winner or edit. Under
 doc it names (e.g. `AUTHORING.md`)** — a mechanical anchor repair is still a
 corpus edit and must follow the host's anchor/notation contract. List every
 semantic contradiction for the owner unresolved even then — `--fix` is
-mechanical-only and never resolves one. To act on a semantic finding, the owner
-routes it to `/handoff-edit` (staged as a dossier for `/apply-edit`).
+mechanical-only and never resolves one. The owner adjudicates each; only a
+finding he accepts goes to `/handoff-edit` (staged as a dossier for
+`/apply-edit`), never the raw list.
 
 **Format:** findings ordered by severity. Per finding —
 `ID · class · severity · A: file#anchor "quote" · B: file#anchor "quote" ·

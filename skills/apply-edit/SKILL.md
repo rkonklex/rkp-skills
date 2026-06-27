@@ -33,9 +33,10 @@ of how good or bad the particular input is.
 - **Anti-anchoring:** the input is to verify, not authority. Where it conflicts with the
   current corpus, the corpus may have moved since it was written — flag the conflict, don't force
   it through.
-- **Re-derive by evidence tag:** tags follow the host corpus's basis scheme if it declares one — the axis for what a claim *rests on* (origin/provenance), not its validation status or file placement — else the dossier defaults **[V]** verified by data · **[I]** inferred · **[P]** provisional. Per tag: **[V]** — spot-check that the cited source exists and says it;
-  **[I]** — re-derive the inference from the sources yourself; **[P]** — treat as movable, never
-  write into a stable document. Untagged load-bearing claims get [I] treatment.
+- **Re-derive by origin tag:** each claim carries where it came from — **[observed]** · **[inferred]** · **[domain-knowledge]** · **[speculation]** (or the host's own tagging vocabulary, if it declares one). The tag is the author's *origin* claim, not a verdict on how far to trust it — you derive that. Per tag: **[observed]** — spot-check that the cited source exists and says it;
+  **[inferred]** — re-derive it from the sources yourself; **[domain-knowledge]** — confirm it is
+  actually standard, not misremembered; **[speculation]** — don't build on it, flag it. Untagged
+  load-bearing claims get **[inferred]** treatment.
 - **Authority check:** a document is a valid basis only if it is committed/owner-published or the
   input explicitly names it as a live source. Un-reviewed drafts and uncommitted leftovers are
   not authority — flag any the input leans on.
@@ -74,9 +75,12 @@ stage.
 - **Conservative defaults:** where the dossier leaves a judgment call open (a rating, the strength
   of a claim, scope of a statement), pick the conservative option and flag any promotion to the
   owner.
+- **Volatile values stay movable:** a value still in flux (an in-progress number, a provisional
+  result) belongs in its canonical home or a clearly-provisional spot — never carved into a
+  stable/canonical document as if settled. If the dossier asks otherwise, flag it.
 - **Scope valve:** defects noticed outside the dossier go to an **Out-of-dossier observations**
   list — never edited in this session, reported at closure.
-- **Stop and ask** when: a [V] claim won't reproduce; an [I] inference won't re-derive; a
+- **Stop and ask** when: an [observed] claim won't check out; an [inferred] one won't re-derive; a
   consistency conflict has no clean resolution; an edit would exceed the dossier's stated scope on
   a canonical/stable document; or an `AGENTS.md` invariant would break.
 

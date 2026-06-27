@@ -36,8 +36,15 @@ Grep both the old and new name across `skills/` and `README.md` before closing t
 ## House voice — match it or the set frays
 Every `SKILL.md` here shares one discipline; a new or edited skill conforms to it:
 - **Tag-driven imperatives:** each rule is a bold semantic tag + an imperative verb, not prose.
-- **Claims carry their basis:** tag anything past the evidence in the skill's own vocabulary
-  (verified / inferred / provisional, or inference / domain-knowledge / speculation).
+- **Claims carry their origin — sender states, receiver re-verifies:** tag anything past the
+  evidence with one closed origin set — `[observed]` (read directly from data, a measurement, or
+  a quotable source) · `[inferred]` (derived, not directly seen) · `[domain-knowledge]` (general
+  expertise, uncited) · `[speculation]` (a guess). The tag is a *fact about where the claim came
+  from*, never the sender's self-rating of how far to trust it — the receiver derives that from
+  the origin. Tag by how you came to hold *this* claim, not its inputs: a derived claim stays
+  `[inferred]` even when its inputs were measured. **Maturity/confidence** (`✓/~/⚠`, likely-holds
+  /…) is a separate axis; **movability** (provisional, will-move) is structural — where a value
+  lives, not a tag.
 - **Flag, don't decide:** surface findings for the owner to adjudicate; never silently pick a
   winner or edit canonical material without an explicit gate.
 - **Anti-sycophancy:** push back as a peer; steelman, then object, before any endorsement.

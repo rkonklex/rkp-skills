@@ -15,8 +15,8 @@ So surface your own weak points honestly — a report that hides a shaky claim f
 2. **Conform to the host's authoring contract; read it before you draft.** Read the destination folder's `AGENTS.md` (or parent's) and any authoring-rules doc it names (e.g. `AUTHORING.md`) **before writing a line** — the read gates the write, never draft-then-reconcile. Conform at the **document level**: the language the corpus's documents use (not the chat's), its citation/anchor style (e.g. explicit `{#id}` anchors over `file:line`), and any code-context notation rules. The report keeps its own genre and structure. Absent a stated contract, match what existing corpus documents do; with no corpus, default to English.
 3. **Never write into `scratch/`.** If a thread's handoff or notes hold a running session-log, this report **supersedes and merges** it into the durable record.
 
-## Tag claims by basis
-Separate well-supported claims from judgment calls from unsettled ones, and **state the basis** so a reviewer can weigh each. Define your tags once near the top of the report; a three-level scheme works (solid / inferred-or-judgment / provisional-and-will-move) — name what "solid" rests on for this session (a source, an instruction, a measurement).
+## Tag claims by origin
+Separate what you **observed** from what you **inferred** from what rests on **uncited expertise** or is a **guess**, so a reviewer can weigh each. Define the tags once near the top: **[observed]** (a source, an instruction, or this session's measurement — quotable and spot-checkable) · **[inferred]** (derived by logic/topology, not directly seen) · **[domain-knowledge]** (general expertise, uncited) · **[speculation]** (a guess). The tag states where a claim came from; how *settled* it is rides the Status field and the Open / deferred section, not the origin tag.
 
 ## Structure (adapt — not every section applies)
 - **Title + header.** `# Report — <focus>`. Then: **Date** (absolute), **Thread** (+ source handoff, referenced not required), **Status** (closed / ongoing / parked), **Outcome** (one line), and a one-line **dual-purpose / self-contained** statement.
@@ -29,11 +29,11 @@ Separate well-supported claims from judgment calls from unsettled ones, and **st
 - **Reviewer checklist.** The claims and judgment calls to audit. For each: what to check, and what would overturn it. This is the report's audit spine — be your own harshest reader.
 
 ## Before saving
-Could a reviewer with neither this chat nor the handoff follow the work and audit the conclusion? Is every non-obvious claim tagged or basis-stated, with inferences and provisional points flagged, not dressed as fact? Does the reviewer checklist name the *real* weak points, not soft ones? Dates absolute?
+Could a reviewer with neither this chat nor the handoff follow the work and audit the conclusion? Is every non-obvious claim tagged by origin, with inferences and provisional points flagged, not dressed as fact? Does the reviewer checklist name the *real* weak points, not soft ones? Dates absolute?
 
 ## If the session produced data or measurements
 Layer these onto the backbone:
-- **Tag instantiation:** **[V]** verified by this session's data · **[I]** inferred (logic/topology, not directly measured) · **[P]** provisional (in progress, will move).
+- **Tag instantiation:** a measured value is **[observed]**; a quantity derived from it (logic/topology, not directly measured) is **[inferred]**. A number still in flux is not a tag — mark it provisional in Status / Open and keep it in its canonical home.
 - **Method & inputs:** capture conditions, and the directed computations that produced the numbers.
 - **Evidence inline but reduced:** small result tables only — **never raw per-step/per-frame arrays** (a plot referenced as an image is fine).
 - **Numbers integrity:** if a figure you need is not reliably in context, **get it from the owner rather than reconstruct it from memory** — the numbers are the audit basis, not impressions.

@@ -51,7 +51,7 @@ This step produces the foundation for the rest of the audit.
 
 What should be in the model that is not?
 
-For each gap, state:
+Label each gap `G1`, `G2`, … — the stable handle the Findings index and any downstream routing cite — and for each state:
 - What is missing and why it matters for the use cases or decisions the work supports.
 - Whether this is a **documentation gap** (the knowledge exists, it was not written down) or a **knowledge gap** (the question is unresolved).
 
@@ -63,7 +63,7 @@ What does the model assume — explicitly or implicitly — that may not hold?
 
 Focus on load-bearing assumptions: ones where, if wrong, a metric, procedure, or conclusion is invalidated.
 
-For each assumption:
+Label each assumption `A1`, `A2`, … and for each:
 - State it precisely.
 - Identify where it appears: explicitly stated vs. implicit in a formula or procedure.
 - Challenge it: under what conditions does it break, and what is the effect?
@@ -79,19 +79,34 @@ Set the existing document structure aside. Reason from the subject outward.
 - Is the chosen decomposition the most natural one for this subject? Would a different decomposition expose something the current framing hides?
 - Are the use cases or scenarios addressed the right ones? Are there important operating scenarios or failure modes not represented anywhere?
 
-This step is generative, not critical. Surface sharp questions, not vague dissatisfaction. If you have no genuine challenge, say so explicitly — do not manufacture criticism.
+This step is generative, not critical. Surface sharp questions, not vague dissatisfaction; label each distinct challenge `F1`, `F2`, … so it can be routed or set aside on its own. If you have no genuine challenge, say so explicitly — do not manufacture criticism.
 
 ## Output Format
 
-Present the four steps in order as direct markdown — headings, bullet points, and equations rendered normally. Do not wrap any part of the output in a code fence. Use section headers matching the step names.
+Present the four steps in order as direct markdown — headings, bullet points, and equations rendered normally, then close with the Findings index. Do not wrap any part of the output in a code fence. Use section headers matching the step names.
 
 Write the audit in the corpus's document language (harvested above), not the chat's — it may be saved verbatim as a corpus file.
 
-There are no severity ratings here. The output is a structured analysis, not a findings list.
+There are no severity ratings and no accept/reject verdicts here — the audit flags; the owner adjudicates. The four steps are the analysis; the **Findings index** that closes the output is only a routing handle onto them, never a substitute for reading them.
 
-When speculating beyond what the documents explicitly support, label it clearly: *[inference]* or *[domain knowledge, not in documents]*.
+When a claim runs beyond what the documents explicitly support, label its origin: *[inferred]* (you derived it) · *[domain-knowledge]* (general expertise, not in the documents) · *[speculation]* (a guess).
 
 After presenting the full audit, offer to save it to a file. Do not save automatically.
+
+## Findings index — close the output with this
+
+One row per adjudicable finding from Steps 2–4 (Step 1 is the model, not a finding). This is the surface the owner triages: it lets him say "route `G2`, `A1`, `F3` to `/handoff-edit`" without re-reading the whole audit. List handles, not verdicts.
+
+| ID | Finding — one line | Remediation type |
+|----|--------------------|------------------|
+| `G#` / `A#` / `F#` | the claim in one line, traceable to its full entry above | `edit` · `decision` · `out-of-scope` · `informational` |
+
+- **edit** — a document change routable to `/handoff-edit`.
+- **decision** — needs an owner policy or boundary call before any edit exists to make.
+- **out-of-scope** — not an edit to the audited corpus (e.g. a new tool, an external change).
+- **informational** — a silence or observation worth recording, no action implied.
+
+The remediation type is descriptive routing metadata, not a judgment of the finding's validity — that adjudication stays the owner's. Do not rank rows by severity or reorder them as a priority list.
 
 ## Saving the audit
 
@@ -103,5 +118,5 @@ When the user asks to save — immediately after the audit or after a discussion
 - **Classify each finding as gap or error.** A gap is a missing piece of the model; an error is a mistake in the documents. Do not conflate them.
 - **Ground every domain claim.** Support it from the documents or from standard domain knowledge; if neither supports it, say so explicitly rather than asserting it.
 - **Respect the harvested domain constraints.** Honor the hard limits and known failure modes the corpus declares (e.g. dimensionality, topology, prior trust-breaks); reason inside them, and flag — never silently cross — any proposal that would violate them.
-- **Stay diagnostic; route remediation.** Surface gaps, assumptions, and frame challenges; do not propose redesigns or rewrites. Acting on a finding is a separate, gated job — point the owner to `/handoff-edit`, which stages the change as an evidence-tagged dossier for `/apply-edit` to execute.
+- **Stay diagnostic; route only accepted findings.** Surface gaps, assumptions, and frame challenges; do not propose redesigns or rewrites. Acting on a finding is a separate, gated job: the audit flags, the owner adjudicates, and only the subset he accepts goes to `/handoff-edit` — which stages it as an evidence-tagged dossier for `/apply-edit`. Never route the raw findings list as if validated; the audit informs the decision, it does not make it.
 - **Skip this skill's own outputs.** Never read any file matching `epistemic-audit-*.md` — they are artifacts of previous runs, not corpus content.

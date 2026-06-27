@@ -23,14 +23,14 @@ For continuing or splitting a thread, use `/handoff`.
 ### Change dossier — per intended change
 - **What & where.** Target doc + section, what it says now, what's wrong/missing. Name it precisely; **don't pre-write the replacement** — give intent, not keystrokes.
 - **Why.** The driving conclusion; alternatives weighed and rejected; cost of leaving it.
-- **Evidence, tagged by basis.** What justifies the change, or where it lives — and how solid it is, so the receiver knows how far to re-derive: take well-supported claims as-is, re-derive inferences from the sources, treat provisional ones as movable (never carve into a stable doc). For measurement or analytical work, tag by basis. If the host corpus declares a basis scheme — the axis for what a claim *rests on* (origin/provenance), not its validation status (maturity) or file placement (commitment) — use it; it may sit in `AGENTS.md` or a doc that file points to (e.g. `AUTHORING.md`), and you stamp in its vocabulary. Absent one, default to **[V]** verified by data · **[I]** inferred · **[P]** provisional.
+- **Evidence, tagged by origin.** What justifies the change, or where it lives — and where each claim came from, so the receiver knows how far to re-derive: **[observed]** (take as-is; the receiver spot-checks the source) · **[inferred]** (re-derive from the sources) · **[domain-knowledge]** (confirm it's standard, not misremembered) · **[speculation]** (don't build on it, flag). The tag states origin, not how far to trust it — that's the receiver's call. If the host corpus declares its own tagging vocabulary (in `AGENTS.md` or a doc it points to, e.g. `AUTHORING.md`), stamp in that instead. Movability — a provisional value that will move — is **not** a tag: route it through the Care rules below (volatile values to one canonical home), never carved into a stable doc.
 - **Suggested direction.** Proposed wording, marked as an improvable starting point, not a mandate.
 - **Consistency & ripple.** Where this reaches — invariants, sibling docs, terminology, dependent claims. Say where to look.
 - **Open calls.** Where you were unsure; ask the receiver to deliberate, and what tips it.
 
 ### Care rules
 - **Care level per target.** Which docs are canonical/stable (change only with owner approval) vs provisional. Volatile values (in-progress numbers, provisional results) live in one canonical home; others point there and state the class, not the figure.
-- **Stop and ask** instead of pushing through when: [V] evidence won't reproduce or an [I] inference won't re-derive; an edit would touch a canonical doc; or a consistency conflict has no clean resolution.
+- **Stop and ask** instead of pushing through when: an [observed] claim won't check out or an [inferred] one won't re-derive; an edit would touch a canonical doc; or a consistency conflict has no clean resolution.
 - **Close with a whole-corpus coherence pass** — after all edits, one read-through of the touched docs and neighbours together (not per-edit), catching any invariant or cross-reference a change broke.
 
 ## Before saving
