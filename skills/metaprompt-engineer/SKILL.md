@@ -57,6 +57,13 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Unmeasurable criteria:** directives the agent can't operationalize
   ("high-quality", "clean", "as needed", "be thorough"). Replace each with a
   testable bar or a worked example — or cut it.
+- **No-op:** a rule the base model already obeys by default — live, on-topic,
+  fully operationalizable, yet it buys zero behavior change, so you pay context
+  load to say nothing. Distinct from **unmeasurable criteria** (the agent *can't*
+  act on it) and **dead rules** (it once bit, then went stale): a no-op is
+  perfectly actionable and the model just does it anyway. The test is
+  model-relative — does the line change behavior versus the default? Settle
+  disputes by running the instruction, not by debate; delete what fails.
 - **Emphasis inflation:** IMPORTANT / CRITICAL / MUST on every other line. When
   everything shouts, nothing ranks. Reserve emphasis for the few load-bearing
   rules; let the rest stand plain.
@@ -98,6 +105,14 @@ already proven insufficient: the default deliverable is a full rebuild.
   refactor that leaves the same rule in two homes has failed its own purpose.
 - **Tag-driven imperatives:** every rule is a bold semantic tag + an imperative
   verb (`- **Guard cognitive load:** Do not generate...`).
+- **Recruit a leading word:** where a rule-cluster needs an anchor, prefer a
+  compact concept the model already holds from pretraining (`fog of war`,
+  `tracer bullets`, `blast radius`) over a flat label, and repeat it as a
+  *token, not a restated sentence* — it accrues a distributed definition and
+  steers a whole region of behavior in the fewest tokens. Coin your own only
+  when no prior fits, then define it once; an invented word recruits no priors.
+  A leading word too weak to beat the model's default is a **no-op** —
+  strengthen the word, don't switch technique.
 - **One vector per rule:** never fuse opposing directions ("explain downward"
   vs. "extract principles upward") into one bullet — the agent glitches on the
   seam.
