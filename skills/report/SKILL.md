@@ -19,7 +19,7 @@ So surface your own weak points honestly — a report that hides a shaky claim f
 Separate what you **observed** from what you **inferred** from what rests on **uncited expertise** or is a **guess**, so a reviewer can weigh each. Define the tags once near the top: **[observed]** (a source, an instruction, or this session's measurement — quotable and spot-checkable) · **[inferred]** (derived by logic/topology, not directly seen) · **[domain-knowledge]** (general expertise, uncited) · **[speculation]** (a guess). The tag states where a claim came from; how *settled* it is rides the Status field and the Open / deferred section, not the origin tag.
 
 ## Structure (adapt — not every section applies)
-- **Title + header.** `# Report — <focus>`. Then: **Date** (absolute), **Thread** (+ source handoff, referenced not required), **Status** (closed / ongoing / parked), **Outcome** (one line), and a one-line **dual-purpose / self-contained** statement.
+- **Title + header.** `# Report — <focus>`. Then: **Date** (absolute), **Thread** (+ source handoff, referenced not required), **Status** (`ongoing` / `parked` / `closed`), **Outcome** (one line), and a one-line **dual-purpose / self-contained** statement.
 - **Frame.** What this session set out to settle.
 - **What was done — approach & inputs.** The path taken; sources, tools, and code by path.
 - **Findings / conclusions.** The results and what they mean, each tagged. One sub-section per question where it helps.
@@ -29,7 +29,7 @@ Separate what you **observed** from what you **inferred** from what rests on **u
 - **Reviewer checklist.** The claims and judgment calls to audit. For each: what to check, and what would overturn it. This is the report's audit spine — be your own harshest reader.
 
 ## Before saving
-Could a reviewer with neither this chat nor the handoff follow the work and audit the conclusion? Is every non-obvious claim tagged by origin, with inferences and provisional points flagged, not dressed as fact? Does the reviewer checklist name the *real* weak points, not soft ones? Dates absolute?
+Could a reviewer with neither this chat nor the handoff follow the work and audit the conclusion? Is every non-obvious claim tagged by origin, with inferences and provisional points flagged, not dressed as fact? Does the reviewer checklist name the *real* weak points, not soft ones? Is Status defaulted down — `ongoing`/`parked` unless the session leaves nothing to do **and** the report is being committed? Dates absolute?
 
 ## If the session produced data or measurements
 Layer these onto the backbone:
