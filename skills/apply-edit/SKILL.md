@@ -86,7 +86,7 @@ stage.
 
 ## Stage gate — the owner closes each stage
 
-Execute the plan one stage at a time; finish a stage fully before the next. At each stage boundary
+At each stage boundary
 (a **checkpoint gate**): stop, report the files changed and a proposed commit message, and wait for
 an explicit owner go before continuing. The owner may review, commit himself, or have you commit —
 either way the next stage starts only on his go.

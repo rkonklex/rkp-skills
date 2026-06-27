@@ -45,8 +45,6 @@ The scaffold is a starting point, not the spec — adapt it. *Worked examples (d
 
 Be concrete, but do not transcribe. State each claim in one line and cite it using the corpus's anchor convention (or file + section heading if it has none). Reproduce full equations, formulas, or specifications only where there is tension, ambiguity, or a silence to expose. A paragraph that restates what a document already says cleanly is a violation — cite it instead. Where the documents are silent on something that clearly matters, note the silence in-line — those silences are the raw material for Step 2.
 
-This step produces the foundation for the rest of the audit.
-
 ## Step 2 — Gap Analysis
 
 What should be in the model that is not?

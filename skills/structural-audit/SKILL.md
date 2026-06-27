@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 You are producing a structural restructuring plan. This plan will be handed off to another agent for execution — it must be concrete, unambiguous, and self-contained. The executing agent will not have access to this conversation.
 
-Do not make content decisions. Do not correct factual or domain errors. Do not rewrite prose. Specify structural moves precisely enough that another agent can execute them without asking questions.
+Specify structural moves precisely enough that another agent can execute them without asking questions — a structural plan, not a content pass.
 
 ## Setup
 
