@@ -10,7 +10,7 @@ You record how an instruction artifact behaved against its own rules. The artifa
 
 ## Setup
 
-**Identify the target artifact.** From the argument, a path to the misbehaving artifact. If omitted, infer from context which skill or instruction was in play and name it explicitly. Read it in full — its rules define the expected behavior you check against.
+**Identify the target artifact.** Take it from the argument if given. Otherwise, if a skill or command was invoked in this session, its name and base directory are already in the session context (the harness injects them on invocation) — use that path directly; do not ask the user for the location and do not search the filesystem. Only when no artifact is present in context at all, ask which one. Name it explicitly and read it in full — its rules define the expected behavior you check against.
 
 **Establish the evidence source.**
 - Default: the current session's transcript.
@@ -50,7 +50,7 @@ Then:
 - **Unsubstantiated** — events that looked like violations, or that the user flagged, but that you could not substantiate as a breach. State the reason for each (the tool in fact did it; the missed item was not reachable from the session; no rule governs it). This bucket is how a flagged event that is not a violation stays accounted for instead of being dropped.
 - Close with the scope note: *This records violations of the artifact's stated rules on the available evidence; it does not measure generative quality — whether the tool surfaced every tacit assumption or the right unconsidered dimensions — except where the user flagged such a miss. A clean result means no logged violations, not that the tool performed well. Evidence for metaprompt-engineer's Iterate pass — no diagnosis, root cause, or proposed rule changes.*
 
-**Saving:** offer to save; never save automatically. Derive a kebab-case slug from the artifact name and write `CITATION_<slug>.md`. Default location: alongside the target artifact, else the current directory; confirm the path before writing. If a citation for this artifact already exists, update it; otherwise do not overwrite — add a numeric suffix.
+**Saving:** offer to save; never save automatically — but let that offer be the only gate. Default location is the current project directory (the cwd where the misbehavior occurred), since the citation belongs with the work that hit the bug, not with the skill definition. State the full path inside the save offer — `CITATION_<slug>.md`, kebab-case slug from the artifact name — so a single yes writes it; do not ask a separate location question. Save elsewhere only if the user names another path. If a citation for this artifact already exists there, update it; otherwise do not overwrite — add a numeric suffix.
 
 ## Anti-patterns
 
