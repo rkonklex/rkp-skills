@@ -57,7 +57,7 @@ A small pipeline for moving work between sessions without losing or corrupting i
 |---|---|
 | **handoff** | Briefs a *fresh* session to **continue** an unfinished thread (context running out) or **split** off a side-thread. Writes a cold-readable, forward-looking `HANDOFF_<topic>.md`: what's settled vs open, what to read, the decisive next action. **Use when** you're about to run out of context, or want to spin a tangent into its own thread. |
 | **report** | Writes a durable, backward-looking `REPORT_<topic>.md` that **stands alone** — a reader with neither the chat nor the source handoff can follow the work and audit it. Dual-purpose: a human reference *and* auditable input for an AI review, with every claim tagged by its origin. **Use when** capturing a finished session for the record or for review. |
-| **data-investigation** | A partner for **investigating data that's partial, sensitive, or non-authoritative** — it designs the probe, you run it and paste back only the reduced result. It picks the smallest probe that discriminates between the live explanations and pushes back when a conclusion outruns the evidence. **Use when** chasing a metric, anomaly, or regression you can only see in part. |
+| **data-investigation** *(slash-only)* | A partner for **investigating data that's partial, sensitive, or non-authoritative** — it designs the probe, you run it and paste back only the reduced result. It picks the smallest probe that discriminates between the live explanations and pushes back when a conclusion outruns the evidence. **Use when** chasing a metric, anomaly, or regression you can only see in part. |
 
 ### Edit critical documents safely
 
