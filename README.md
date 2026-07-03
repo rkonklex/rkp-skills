@@ -3,8 +3,8 @@
 Robert Konklewski's Claude Code skills, packaged as a plugin (`rkp`).
 
 These are **thinking and writing disciplines for research-style work** — developing an idea,
-auditing a corpus of documents, handing work to a fresh session, recording what was decided, and
-engineering the instructions that drive agents. They lean on a shared house style: cold-readable
+auditing a corpus of documents, handing work to a fresh session, recording what was decided,
+engineering the instructions that drive agents, and designing then building code. They lean on a shared house style: cold-readable
 artifacts, claims tagged by where they come from (with confidence noted separately), anti-sycophancy, and "flag for the owner, don't
 silently decide." Most are corpus-aware — they read a folder's `AGENTS.md` / `AUTHORING.md` and
 conform to the host project's conventions rather than imposing their own.
@@ -39,6 +39,15 @@ for them when the situation matches their description, and you can still invoke 
 | Skill | What it does |
 |---|---|
 | **attack-duck** *(slash-only)* | An adversarial thinking partner for a half-formed idea, observation, or decision. Develops it through dialogue — mirrors the idea back, surfaces hidden assumptions and blind spots, pushes back instead of agreeing, and (on your go) crystallizes the result into a `NOTE_<topic>.md` written for *you*. Works open, or grounded against a corpus. **Use to** pressure-test or structure an idea, decide whether it's worth doing, or make sense of observations against code/docs. |
+
+### Design and build code
+
+A design→build pair for actual source work: settle the shape first, then implement to it.
+
+| Skill | What it does |
+|---|---|
+| **drafting-table** *(slash-only)* | A design partner for code you **haven't written yet**. Widens the design space (Explore) — axes and live options, no premature pick — then, on your gate, converges to **one buildable spec** (Design), never code. Writes a living `DESIGN_<topic>.md` that hardens from a map into a committed design. **Use to** think through the shape of a new module, framework, or feature — greenfield or against an existing codebase — before anyone builds it. |
+| **lead-engineer** *(slash-only)* | The **primary implementation agent** for senior-level work: working, idiomatic code, delivered and validated. Builds to a frozen design when handed one; owns tactical decisions, holds stable code stable, and **escalates** structural rot or a flawed spec instead of coding around it. **Use when** implementing a feature, fixing a bug, or refactoring with strong but controlled initiative. |
 
 ### Hand work off, and record it
 
@@ -81,6 +90,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 ## How they fit together
 
 - **attack-duck** develops an idea, then points you at implementation or at `report`/`handoff` to capture it.
+- **drafting-table** freezes a `DESIGN_` spec; **lead-engineer** builds to it, kicking a flawed spec back to the table.
 - **handoff** briefs the next session; **report** records the outcome once the work is done.
 - **handoff-edit** → **apply-edit** is its own author→receiver pair for changes to critical documents.
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
