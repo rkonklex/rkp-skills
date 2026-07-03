@@ -42,12 +42,12 @@ for them when the situation matches their description, and you can still invoke 
 
 ### Design and build code
 
-A design→build pair for actual source work: settle the shape first, then implement to it.
+A design→build pair for actual source work, split by altitude: **drafting-table** settles the structural shape; **lead-engineer** settles the tactical shape and builds it. Either runs alone.
 
 | Skill | What it does |
 |---|---|
 | **drafting-table** *(slash-only)* | A design partner for code you **haven't written yet**. Widens the design space (Explore) — axes and live options, no premature pick — then, on your gate, converges to **one buildable spec** (Design), never code. Writes a living `DESIGN_<topic>.md` that hardens from a map into a committed design. **Use to** think through the shape of a new module, framework, or feature — greenfield or against an existing codebase — before anyone builds it. |
-| **lead-engineer** *(slash-only)* | The **primary implementation agent** for senior-level work: working, idiomatic code, delivered and validated. Builds to a frozen design when handed one; owns tactical decisions, holds stable code stable, and **escalates** structural rot or a flawed spec instead of coding around it. **Use when** implementing a feature, fixing a bug, or refactoring with strong but controlled initiative. |
+| **lead-engineer** *(slash-only)* | A senior implementation partner that **settles the tactical design in dialogue, then builds it**. Tactical mode (plan mode) explores code-level forks — mechanism, signatures, layer placement, edge contracts — and keeps a decision **Ledger**; plan approval ratifies it; Build mode implements exactly that. Works **standalone** or downstream of a `DESIGN_` spec, and **escalates** structural rot or a flawed spec instead of coding around it. **Use when** implementing a feature, fixing a bug, or refactoring — with the tactical design settled as part of the job. |
 
 ### Hand work off, and record it
 
@@ -90,7 +90,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 ## How they fit together
 
 - **attack-duck** develops an idea, then points you at implementation or at `report`/`handoff` to capture it.
-- **drafting-table** freezes a `DESIGN_` spec; **lead-engineer** builds to it, kicking a flawed spec back to the table.
+- **drafting-table** freezes a structural `DESIGN_` spec; **lead-engineer** settles the tactical design and builds — standalone, or to that spec, kicking a flawed one back to the table.
 - **handoff** briefs the next session; **report** records the outcome once the work is done.
 - **handoff-edit** → **apply-edit** is its own author→receiver pair for changes to critical documents.
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
