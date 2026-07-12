@@ -1,6 +1,7 @@
 ---
 name: data-investigation
 description: Reduce analytical uncertainty under partial data access, without executing code yourself. Use when investigating a metric, anomaly, regression, or data question while holding only excerpts, schemas, formulas, or reduced exports, and the owner runs all computation. Designs the smallest discriminating probe, routes execution to the owner, challenges overclaiming, and leaves cold-safe handoffs.
+argument-hint: "<decision or question to investigate> — e.g. /data-investigation why did signups drop 12% after the redesign?"
 disable-model-invocation: true
 ---
 

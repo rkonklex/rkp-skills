@@ -1,6 +1,7 @@
 ---
+name: structural-audit
 description: "Structural audit of research documents. Auto-detects mode from argument: a directory path runs an architecture audit (inter-document content placement and boundaries); a file path runs a document audit (intra-document readability and layering). Produces a concrete restructuring plan as a handoff document for another agent to execute."
-argument-hint: "<path> — file for document audit, directory for architecture audit. Flags: --document or --architecture to force a mode; --canonical <path> to specify the canonical reference explicitly."
+argument-hint: "<path> — file for document audit, directory for architecture audit; e.g. /structural-audit docs/model.md. Flags: --document or --architecture to force a mode; --canonical <path> to specify the canonical reference explicitly."
 disable-model-invocation: true
 ---
 
@@ -10,18 +11,15 @@ Specify structural moves precisely enough that another agent can execute them wi
 
 ## Setup
 
-**Parse arguments:**
-
-- If `--document` is present, or if the path argument resolves to a file → **Mode A**.
-- If `--architecture` is present, or if the path argument resolves to a directory → **Mode B**.
+**Parse arguments.** A **file → Mode A** (document audit); a **directory → Mode B** (architecture audit). The `--document` / `--architecture` flags assert the intended mode; if one contradicts the path type — or both are given, or the path resolves to neither — stop and ask, never coerce.
 
 **Identify the canonical reference (both modes):**
 
 If `--canonical <path>` was given, use that document as the canonical reference.
 
 Otherwise, infer it:
-1. Look for `AGENTS.md` and `README.md` in the target directory (the file's parent directory for Mode A, the directory itself for Mode B). Read whichever exist — they typically name the key documents and their roles.
-2. If neither is found there, check the root project directory for the same files.
+1. The host's rules are already in context and typically name the key documents and their roles. Also read `README.md` in the target directory (the file's parent directory for Mode A, the directory itself for Mode B) if it exists — it is not auto-loaded.
+2. If no `README.md` is there, check the root project directory.
 3. From what you read, identify the document described as the primary reference, canonical source, or most stable document. State your inference explicitly before proceeding.
 4. If no clear canonical reference can be identified, proceed without one and note the absence in the plan.
 
@@ -170,4 +168,4 @@ Use today's date. Do not read any existing file before writing — each save pro
 - Do not rewrite prose. Specify moves, not replacements.
 - Every instruction in the plan must be executable without a follow-up question. If you cannot make an instruction unambiguous, flag it as requiring owner input before execution.
 - State all inferences explicitly — canonical reference identification, assumed document purpose, assumed audience.
-- **Write the plan in the language the host's documents use** (check the target's `AGENTS.md`), not the chat's — English unless the corpus says otherwise. The plan is presented in chat and saved verbatim as a file in the corpus folder, so it follows the corpus's document language even when the conversation does not.
+- **Write the plan in the language the host's documents use** (per the host's rules, already in context), not the chat's — English unless the corpus says otherwise. The plan is presented in chat and saved verbatim as a file in the corpus folder, so it follows the corpus's document language even when the conversation does not.

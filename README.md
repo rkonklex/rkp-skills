@@ -6,8 +6,8 @@ These are **thinking and writing disciplines for research-style work** — devel
 auditing a corpus of documents, handing work to a fresh session, recording what was decided,
 engineering the instructions that drive agents, and designing then building code. They lean on a shared house style: cold-readable
 artifacts, claims tagged by where they come from (with confidence noted separately), anti-sycophancy, and "flag for the owner, don't
-silently decide." Most are corpus-aware — they read a folder's `AGENTS.md` / `AUTHORING.md` and
-conform to the host project's conventions rather than imposing their own.
+silently decide." Most are corpus-aware — they conform to the host project's rules (loaded by the harness) and any
+authoring doc those rules name, rather than imposing their own.
 
 ## Install
 

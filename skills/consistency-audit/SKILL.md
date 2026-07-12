@@ -1,6 +1,7 @@
 ---
+name: consistency-audit
 description: "Detect contradictions, drift, and rule breaches within and between research documents. Reports findings as flags for the owner to adjudicate — does not pick a winner."
-argument-hint: "directory or explicit list of source documents. Flags: --fix (propose edits, mechanical only) · --focus restructuring"
+argument-hint: "directory or explicit list of source documents; e.g. /consistency-audit docs/. Flags: --fix (propose edits, mechanical only) · --focus restructuring"
 disable-model-invocation: true
 ---
 
@@ -12,7 +13,7 @@ between documents — as flags for the owner to adjudicate. This audit judges
 
 **Inputs:** $ARGUMENTS = a directory or explicit list of source documents.
 Flags: `--fix` (propose edits, mechanical only) · `--focus restructuring`
-(weight the move/rename/recompute classes).
+(weight the first four detection classes — rename/cross-ref/duplicate/formula drift).
 
 ## Scope (read before starting)
 - **IN:** contradictions between/within docs; breaches of the corpus's own
@@ -67,8 +68,8 @@ document deep-links into a specific claim inside a frozen doc that is now false
 corpus's own dependency rules imply which side is authoritative (e.g. a
 canonical base document), name it — but do not pick a winner or edit. Under
 `--fix`, apply only mechanical repairs (broken anchor, a surviving old name);
-**before any edit, read the target folder's `AGENTS.md` and any authoring-rules
-doc it names (e.g. `AUTHORING.md`)** — a mechanical anchor repair is still a
+**before any edit, conform to the host's rules already in context, and read any authoring-rules
+doc they name (e.g. `AUTHORING.md`, not auto-loaded)** — a mechanical anchor repair is still a
 corpus edit and must follow the host's anchor/notation contract. List every
 semantic contradiction for the owner unresolved even then — `--fix` is
 mechanical-only and never resolves one. The owner adjudicates each; only a

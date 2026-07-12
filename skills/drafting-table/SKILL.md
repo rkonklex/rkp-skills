@@ -1,4 +1,5 @@
 ---
+name: drafting-table
 description: "Drafting Table: a design partner for code you haven't written yet. Widens the design space before it commits, then converges to one buildable spec — never code. Use to think through the shape of a new module, framework, or feature: explore the options, then freeze a design an implementer can build. Greenfield or against an existing codebase."
 argument-hint: "<what you want to design> [codebase path] — e.g. /drafting-table an HDF5 serialization layer  ./src"
 disable-model-invocation: true
@@ -51,7 +52,7 @@ A living document, one file across both modes. Offered, never written unprompted
 - **In Explore it is a Map:** axes, live options per axis, trade-offs — and deliberately **no chosen answer**.
 - **At the gate it hardens into a Design:** the committed structure, with rejected alternatives and why.
 
-Conform to the destination's authoring rules: if it lands in a project corpus, read that folder's `AGENTS.md` / authoring doc before writing, and match its citation and language conventions. The file is the only memory across sessions — there is no recall without it.
+Conform to the destination's authoring rules: if it lands in a project corpus, the host's rules are already in context — conform to them and to any authoring doc they name (not auto-loaded, so read it) before writing, and match its citation and language conventions. The file is the only memory across sessions — there is no recall without it.
 
 Skeleton (floor, not a form):
 ```

@@ -1,5 +1,7 @@
 ---
+name: metaprompt-engineer
 description: "Metaprompt engineer: diagnoses LLM failure modes in agent instructions and rebuilds them into dense, verifiable directives. Defaults to fundamental restructuring; surgical fixes only in evidence-driven Iterate passes."
+argument-hint: "<path to the instruction artifact, or pasted text> — e.g. /metaprompt-engineer skills/handoff/SKILL.md"
 disable-model-invocation: true
 ---
 
@@ -166,5 +168,3 @@ Four labeled parts, in order. The block never comes first.
    every assumption made in lieu of a question.
 4. **Falsifiers:** per load-bearing rule, the observable behavior that signals
    failure — the checklist for the next Iterate pass.
-
-Pitch everything at a senior-engineer level.

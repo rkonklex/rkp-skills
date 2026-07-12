@@ -6,10 +6,9 @@ Working here means **authoring and refining instruction artifacts**, not running
 
 ## Two layers — keep them straight
 - **This file** governs editing *this* repo: it is the authoring contract for the skills.
-- **A skill at runtime** reads the *host project's* `AGENTS.md` / `AUTHORING.md` — a
-  different corpus the user points the skill at. When a `SKILL.md` says "read `AGENTS.md`",
-  that is the user's target folder, **never this repo**. Don't apply this file to a skill's
-  runtime behavior, or a host's rules to repo edits.
+- **A skill at runtime** operates on the *host project's* corpus — a different corpus the user
+  points the skill at, governed by that project's own rules (see House voice). Don't apply this
+  file to a skill's runtime behavior, or a host's rules to repo edits.
 
 ## Registry sync — forcing function
 A skill is recorded in four places. Any add / rename / remove updates all that apply, in the
@@ -52,8 +51,12 @@ Every `SKILL.md` here shares one discipline; a new or edited skill conforms to i
   `CITATION_`) must read without the originating chat.
 - **Mark load-bearing rules, and give each a falsifier:** name the few rules that void the tool
   if broken, and the observable signal that proves one failed.
-- **Conform to the host:** a skill writing into a user's corpus reads that corpus's authoring
-  rules first and matches its document language, not the chat's.
+- **Conform to the host, don't reload it:** the harness loads the host project's rules into context,
+  so a skill **assumes they're there and conforms** — its own defaults lose to them on conflict —
+  and never re-reads or enumerates rulebook filenames. It reads only what the harness won't load: a
+  doc the rules **name** (e.g. `AUTHORING.md`), or a plain orientation doc for structure. Preparing
+  the project for its harness is the *project's* job, not the skill's. Match the host's document
+  language, not the chat's.
 
 ## No build step
 Nothing here compiles, lints, or tests. Validation is reading: the frontmatter parses, the four

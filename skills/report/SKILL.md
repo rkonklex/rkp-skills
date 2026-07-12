@@ -1,4 +1,5 @@
 ---
+name: report
 description: "Write a durable REPORT_<topic>.md: a self-contained, dual-purpose record of a session's work — a human reference plus auditable input for an AI review of the analysis and decisions. Use when asked to capture a session for the historic record or for review."
 argument-hint: "<topic> — what the report covers, e.g. /report handoff-skills-design"
 ---
@@ -12,7 +13,7 @@ So surface your own weak points honestly — a report that hides a shaky claim f
 
 ## Setup
 1. **Focus** from the argument — a short description of what the report covers; derive a kebab-case slug for `REPORT_<slug>.md` in the work's folder. If omitted, infer from context. If a report for this topic exists, update it rather than spawn a near-duplicate.
-2. **Conform to the host's authoring contract; read it before you draft.** Read the destination folder's `AGENTS.md` (or parent's) and any authoring-rules doc it names (e.g. `AUTHORING.md`) **before writing a line** — the read gates the write, never draft-then-reconcile. Conform at the **document level**: the language the corpus's documents use (not the chat's), its citation/anchor style (e.g. explicit `{#id}` anchors over `file:line`), and any code-context notation rules. The report keeps its own genre and structure. Absent a stated contract, match what existing corpus documents do; with no corpus, default to English.
+2. **Conform to the host's authoring contract.** The host's rules are already in context; read any authoring-rules doc they name (e.g. `AUTHORING.md`, not auto-loaded) **before writing a line** — that read gates the write, never draft-then-reconcile. Conform at the **document level**: the language the corpus's documents use (not the chat's), its citation/anchor style (e.g. explicit `{#id}` anchors over `file:line`), and any code-context notation rules. The report keeps its own genre and structure. Absent a stated contract, match what existing corpus documents do; with no corpus, default to English.
 3. **Never write into `scratch/`.** If a thread's handoff or notes hold a running session-log, this report **supersedes and merges** it into the durable record.
 
 ## Tag claims by origin

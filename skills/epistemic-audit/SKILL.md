@@ -1,4 +1,5 @@
 ---
+name: epistemic-audit
 description: "Epistemic audit of a research corpus: reconstruct the implicit model of the subject, surface gaps, expose load-bearing assumptions, and challenge the framing from first principles. Not a consistency check — this interrogates whether the model is complete and correct as a description of the real subject."
 argument-hint: "Optional. A directory, or space-separated document paths / bare filenames resolved against the target directory. If omitted, audits the living documents in the current topic directory. Example: signal_model.md operations.md"
 disable-model-invocation: true
@@ -17,9 +18,9 @@ All documents are working hypotheses about the subject, not authoritative specif
 - If no arguments → audit the living documents in the current topic directory.
 - If the corpus has a document map / index (e.g. `index.md`), read it first to resolve the corpus.
 
-**Identify the canonical reference:** Read `AGENTS.md` and `README.md` in the target directory — and the root project directory if neither is there. They typically name the key documents and the most stable / canonical reference. State your inference explicitly, then read that document before the others. Treat it as the best available starting point, not as settled fact — its assumptions and conclusions are in scope for challenge. If no canonical reference can be identified, proceed without one and note the absence.
+**Identify the canonical reference:** The host's rules are already in context; also read `README.md` in the target directory — or the root project directory if it isn't there. Together they typically name the key documents and the most stable / canonical reference. State your inference explicitly, then read that document before the others. Treat it as the best available starting point, not as settled fact — its assumptions and conclusions are in scope for challenge. If no canonical reference can be identified, proceed without one and note the absence.
 
-**Harvest the corpus's conventions (limited degradation).** From the rulebook (`AGENTS.md`, plus any authoring / conventions / style document it names), extract what the audit needs:
+**Harvest the corpus's conventions (limited degradation).** From the host's rules already in your context (plus any authoring / conventions / style document they name — not auto-loaded, so read it), extract what the audit needs:
 - **Maturity vocabulary** — the tags the corpus uses to mark confidence or validation (e.g. Established / Provisional / Exploratory) and which claims it treats as settled.
 - **Anchor / citation convention** — how stable references are written (e.g. `{#id}` anchors); used in Step 1 citations.
 - **Frozen layer** — which files are historical records or superseded (e.g. `REPORT_*`), to be challenged only as link-targets, never reconstructed as the live model.
@@ -28,7 +29,7 @@ All documents are working hypotheses about the subject, not authoritative specif
 
 Try the obvious sources for each. If the corpus declares no usable structure for a given convention, **say so explicitly and fall back to the generic default**: rate maturity on a plain confidence axis; cite file + section heading; treat nothing as frozen unless it self-identifies as a historical record; write in the chat's document language; impose no domain constraints beyond standard domain knowledge. Do not invent conventions the corpus does not have.
 
-**Exclude from the audited corpus:** this skill's own outputs (`epistemic-audit-*.md`), instruction / convention files (`AGENTS.md`, `README.md`, authoring docs — they are convention sources, not model content), handoff files (in scope only when passed explicitly as arguments), the harvested frozen / historical layer, and directories starting with `.` or named `scratch`.
+**Exclude from the audited corpus:** this skill's own outputs (`epistemic-audit-*.md`), instruction / convention files (the rulebook, `README.md`, authoring docs — they are convention sources, not model content), handoff files (in scope only when passed explicitly as arguments), the harvested frozen / historical layer, and directories starting with `.` or named `scratch`.
 
 ## Step 1 — Model Reconstruction
 
@@ -41,7 +42,7 @@ Extract and write out the implicit model of the subject as you understand it fro
 - **Observables** — what is measurable or inspectable, and through what chain.
 - **Outputs** — the scalar metrics or decisions that characterize the system, and what they support.
 
-The scaffold is a starting point, not the spec — adapt it. *Worked examples (do not copy verbatim):* a physical-measurement corpus decomposes naturally into signal / noise / hardware / measurement / metric; an algorithm rewrite into inputs / state / transformations / invariants / outputs; an agent or operating-contract corpus into actors / rules / triggers / escalation / outcomes. Use whichever decomposition exposes *this* subject. If the host `AGENTS.md` declares its own model facets, prefer them.
+The scaffold is a starting point, not the spec — adapt it. *Worked examples (do not copy verbatim):* a physical-measurement corpus decomposes naturally into signal / noise / hardware / measurement / metric; an algorithm rewrite into inputs / state / transformations / invariants / outputs; an agent or operating-contract corpus into actors / rules / triggers / escalation / outcomes. Use whichever decomposition exposes *this* subject. If the host's rules declare their own model facets, prefer them.
 
 Be concrete, but do not transcribe. State each claim in one line and cite it using the corpus's anchor convention (or file + section heading if it has none). Reproduce full equations, formulas, or specifications only where there is tension, ambiguity, or a silence to expose. A paragraph that restates what a document already says cleanly is a violation — cite it instead. Where the documents are silent on something that clearly matters, note the silence in-line — those silences are the raw material for Step 2.
 

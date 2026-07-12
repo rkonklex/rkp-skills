@@ -1,4 +1,5 @@
 ---
+name: handoff-edit
 description: "Hand off careful edits to critical documents as an evidence-backed change dossier for a fresh session to execute. Writes HANDOFF_<topic>.md."
 argument-hint: "<topic> — names the document-edit thread, e.g. /handoff-edit auth-retry-policy"
 ---
@@ -11,19 +12,19 @@ For continuing or splitting a thread, use `/handoff`.
 
 ## Setup
 1. **Focus** from the argument — a short description of what to edit; use it as focus and scope, and derive a kebab-case slug for the filename `HANDOFF_<slug>.md` in the documents' folder. If omitted, infer the focus from context. If a handoff for this topic already exists, **don't silently overwrite or spawn a near-duplicate** — update the existing file, or reconcile the slug with the owner.
-2. **AGENTS.md** in that folder (or parent) — point the receiver there; don't re-read the corpus. If an `AUTHORING.md` sits beside it, point there too — it carries the authoring procedures the receiver's edits must follow.
+2. **Authoring doc.** The receiver's harness loads the corpus's rules — don't re-read the corpus. But point the receiver at any `AUTHORING.md` the rules name: it carries the authoring procedures the edits must follow and is *not* auto-loaded.
 3. **Never touch `scratch/`** as source or destination — except one file the owner explicitly names.
 
 ## The handoff (in order)
 - **Title + focus.** `# Handoff (edit) — <focus>`, which docs change and to what end, `For:/From:/Date:/Status:`. Absolute date.
-- **Read first (in order).** Sources with why + section; `AGENTS.md` first; the docs to edit and any code by path. Pointers only.
+- **Read first (in order).** Sources with why + section; the docs to edit and any code by path. Pointers only.
 - **Anti-anchoring.** The handoff is input to verify, not authority: re-derive from the sources before editing a critical doc.
 - **State — settled vs open.** Settled = don't relitigate. Open = judgment calls left to the fresh session.
 
 ### Change dossier — per intended change
 - **What & where.** Target doc + section, what it says now, what's wrong/missing. Name it precisely; **don't pre-write the replacement** — give intent, not keystrokes.
 - **Why.** The driving conclusion; alternatives weighed and rejected; cost of leaving it.
-- **Evidence, tagged by origin.** What justifies the change, or where it lives — and where each claim came from, so the receiver knows how far to re-derive: **[observed]** (take as-is; the receiver spot-checks the source) · **[inferred]** (re-derive from the sources) · **[domain-knowledge]** (confirm it's standard, not misremembered) · **[speculation]** (don't build on it, flag). The tag states origin, not how far to trust it — that's the receiver's call. If the host corpus declares its own tagging vocabulary (in `AGENTS.md` or a doc it points to, e.g. `AUTHORING.md`), stamp in that instead. Movability — a provisional value that will move — is **not** a tag: route it through the Care rules below (volatile values to one canonical home), never carved into a stable doc.
+- **Evidence, tagged by origin.** What justifies the change, or where it lives — and where each claim came from, so the receiver knows how far to re-derive: **[observed]** (take as-is; the receiver spot-checks the source) · **[inferred]** (re-derive from the sources) · **[domain-knowledge]** (confirm it's standard, not misremembered) · **[speculation]** (don't build on it, flag). The tag states origin, not how far to trust it — that's the receiver's call. If the host corpus declares its own tagging vocabulary (in the host's rules or a doc they name, e.g. `AUTHORING.md`), stamp in that instead. Movability — a provisional value that will move — is **not** a tag: route it through the Care rules below (volatile values to one canonical home), never carved into a stable doc.
 - **Suggested direction.** Proposed wording, marked as an improvable starting point, not a mandate.
 - **Consistency & ripple.** Where this reaches — invariants, sibling docs, terminology, dependent claims. Say where to look.
 - **Open calls.** Where you were unsure; ask the receiver to deliberate, and what tips it.

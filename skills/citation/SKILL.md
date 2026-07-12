@@ -1,4 +1,5 @@
 ---
+name: citation
 description: "Records how an instruction artifact (skill, AGENTS.md, command, output-style) misbehaved in real use: each violation of one of its own rules, backed by a verbatim quote from the session, written to a CITATION_*.md you pass to metaprompt-engineer for diagnosis and repair in its Iterate pass. Records violations; does not diagnose or rewrite rules."
 argument-hint: "Optional: path to the misbehaving artifact (SKILL.md / AGENTS.md / command). If omitted, infer the artifact in play from context. Evidence is the current session unless you supply excerpts or a transcript file."
 disable-model-invocation: true

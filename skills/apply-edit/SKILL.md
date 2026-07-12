@@ -1,6 +1,7 @@
 ---
+name: apply-edit
 description: "Execute a handoff or a direct edit brief against critical documents with receiver-side discipline: verify evidence before editing, hard plan gate, owner-gated stages, information-preserving rewrites, coherence sweep, structured closure."
-argument-hint: "<path to a HANDOFF_*.md, or an edit brief> — the change set to execute"
+argument-hint: "<path to a HANDOFF_*.md, or an edit brief> — the change set to execute; e.g. /apply-edit HANDOFF_auth-retry-policy.md"
 disable-model-invocation: true
 ---
 
@@ -13,10 +14,10 @@ of how good or bad the particular input is.
 
 1. **Target:** $ARGUMENTS = path to a handoff or a direct edit brief. Read it in full. No argument →
    ask; never guess what to execute.
-2. **Rules first:** read `AGENTS.md` in the documents' folder (or nearest parent) before any other
-   corpus file, then the `AUTHORING.md` beside it if present — the authoring procedures (anchors,
-   notation, output templates, maturity tagging, lineage/profile citation) that every corpus edit must
-   follow. Their invariants and care levels override anything implied by the input or by convenience.
+2. **Host rules govern — already in context; don't re-read them.** Their invariants and care levels
+   **override** the input, this skill's defaults, and convenience. Read the authoring doc they name
+   (e.g. `AUTHORING.md`, not auto-loaded) before editing — its procedures (anchors, notation, output
+   templates, maturity tagging, lineage/profile citation) gate every corpus edit.
 3. **Classify the input:**
    - **Edit dossier** (per-change entries with evidence, ripple, care rules — `/handoff-edit`
      output): full protocol below.
@@ -82,7 +83,7 @@ stage.
   list — never edited in this session, reported at closure.
 - **Stop and ask** when: an [observed] claim won't check out; an [inferred] one won't re-derive; a
   consistency conflict has no clean resolution; an edit would exceed the dossier's stated scope on
-  a canonical/stable document; or an `AGENTS.md` invariant would break.
+  a canonical/stable document; or a host-rule invariant would break.
 
 ## Stage gate — the owner closes each stage
 
@@ -92,7 +93,7 @@ an explicit owner go before continuing. The owner may review, commit himself, or
 either way the next stage starts only on his go.
 
 - **Defer commit mechanics to the host.** Who commits, staging discipline, and which version-control
-  actions are allowed are the project's policy — follow the host `AGENTS.md` / `AUTHORING.md`. Absent
+  actions are allowed are the project's policy — follow the host's rules / the `AUTHORING.md` they name. Absent
   one: commit only the files this gate's approval covers, and never run destructive or
   history-rewriting git on your own (reset, rebase, push, force) — those stay the owner's.
 - **Checkpoints are restart backups:** if the session must end mid-plan, end at a closed, coherent
@@ -117,7 +118,7 @@ One light pass over the touched documents read together (not per-edit):
   (examples, intros, notes, limitations) checking that the *claim* still holds, not merely that no
   retired token appears. Secondary prose paraphrasing the old semantics is the main leak.
 - **Anchor check:** every `{#id}` and cross-reference added or repointed resolves.
-- **Invariant spot-check:** the `AGENTS.md`/index rules relevant to the touched documents (link
+- **Invariant spot-check:** the host rules / index invariants relevant to the touched documents (link
   direction, no code in docs, where volatile values live) still hold.
 - **Render if available:** run the corpus build (e.g. a docs/site build like `quarto render`) when the tool is present;
   if unavailable, report that plainly — never imply render validation that didn't run.
