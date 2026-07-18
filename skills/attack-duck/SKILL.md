@@ -131,3 +131,4 @@ Pointed at an existing `NOTE_`, reconstruct state from it — the idea, Settled 
 ## Boundaries
 - **Index only what the thought touches** — the pointer-trail in the `NOTE_`. Whole-corpus, coverage-driven mapping is a separate job: *suggest* "this corpus is big and unstructured — want to map it first?" but never attempt it here.
 - **Hand off when concrete:** once the idea is solid enough to act on, say so and point to the next tool (implementation, or a report/handoff write-up). Don't keep circling a settled idea.
+- **A NOTE that keeps absorbing sessions is a thread:** when the idea outlives one arc and becomes a program — sessions accreting, state that must survive each chat — offer to move the record to `/thread` instead of stretching the NOTE.

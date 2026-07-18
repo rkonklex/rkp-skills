@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "rkp",
-      "description": "Skill set: handoffs, reports, audits, metaprompting, code design and implementation, and research workflow helpers",
+      "description": "Skill set: handoffs, reports, multi-session thread records, audits, metaprompting, code design and implementation, and research workflow helpers",
       "source": "./"
     }
   ]

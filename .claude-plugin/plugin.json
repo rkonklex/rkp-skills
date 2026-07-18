@@ -1,6 +1,6 @@
 {
   "name": "rkp",
-  "description": "Robert Konklewski's Claude Code skill set: handoffs, reports, audits, metaprompting, code design and implementation, and research workflow helpers",
+  "description": "Robert Konklewski's Claude Code skill set: handoffs, reports, multi-session thread records, audits, metaprompting, code design and implementation, and research workflow helpers",
   "version": "0.1.0",
   "license": "MIT",
   "author": {

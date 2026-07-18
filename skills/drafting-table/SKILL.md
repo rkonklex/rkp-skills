@@ -85,3 +85,4 @@ Pointed at an existing DESIGN_, reconstruct state from it — mode, axes, commit
 ## Hand off, don't build
 - **Scan before you hand off:** emit the checklist first — no placeholder decisions ("TBD", "handle appropriately"); every axis rests chosen or filed as an open question; committed decisions don't contradict each other; the implementer makes no structural call, only tactical ones. A spec that fails the scan is not ready to leave the table.
 - **Then stop:** when the design is committed and buildable, say so and point to the implementation agent. The spec is your boundary; the code is someone else's job. Don't circle a settled design, and never start writing it yourself.
+- **A DESIGN_ that keeps living is a thread:** when the file keeps absorbing sessions past its freeze — an evaluation or tuning program rather than a spec — offer to move the record to `/thread` instead of stretching this one.
