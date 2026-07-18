@@ -59,6 +59,12 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Unmeasurable criteria:** directives the agent can't operationalize
   ("high-quality", "clean", "as needed", "be thorough"). Replace each with a
   testable bar or a worked example — or cut it.
+- **Orphan premise:** a purpose statement or named lifecycle phase that no rule
+  enforces — it reads as binding but binds nothing, and failures pool exactly
+  there ("the file is the only memory" with no cold-readability rule; a
+  `resume → work → integrate` heading whose work phase has no rules). Trace
+  every premise and named phase to at least one rule with a falsifier; add the
+  rule or cut the premise.
 - **No-op:** a rule the base model already obeys by default — live, on-topic,
   fully operationalizable, yet it buys zero behavior change, so you pay context
   load to say nothing. Distinct from **unmeasurable criteria** (the agent *can't*
