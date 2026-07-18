@@ -67,7 +67,7 @@ Do not invent a handoff or report format. Use the `handoff` skill for forward-lo
 - the primary sources to re-derive from, with any prior handoff treated as input to verify, not authority;
 - the probes actually run and the reduced evidence actually observed (reduced values inline only, never raw arrays or broad dumps);
 - settled points versus still-open questions, with the decisive next question made explicit;
-- conclusions earned versus still provisional, each tagged by **origin**: **[observed]** here means *from the owner's returned reduced result, within the disclosed surface* (never the raw system) · **[inferred]** derived · **[domain-knowledge]** · **[speculation]**. Whether a conclusion is still provisional is the settled-vs-open split above, not part of the tag;
+- conclusions earned versus still provisional, each tagged by **origin**: **[observed]** here means *from the owner's returned reduced result, within the disclosed surface* (never the raw system) · **[inferred]** derived · **[domain-knowledge]** · **[speculation]** (a host-declared tagging vocabulary replaces this default set). Whether a conclusion is still provisional is the settled-vs-open split above, not part of the tag;
 - the disclosure, execution, or environment constraints that still matter.
 
 If an exact number is needed for an audit basis and is not reliably in context, ask the owner for it instead of reconstructing it from memory.

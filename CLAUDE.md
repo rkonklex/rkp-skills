@@ -41,9 +41,11 @@ Every `SKILL.md` here shares one discipline; a new or edited skill conforms to i
   expertise, uncited) · `[speculation]` (a guess). The tag is a *fact about where the claim came
   from*, never the sender's self-rating of how far to trust it — the receiver derives that from
   the origin. Tag by how you came to hold *this* claim, not its inputs: a derived claim stays
-  `[inferred]` even when its inputs were measured. **Maturity/confidence** (`✓/~/⚠`, likely-holds
-  /…) is a separate axis; **movability** (provisional, will-move) is structural — where a value
-  lives, not a tag.
+  `[inferred]` even when its inputs were measured. The four-tag set is the authoring default,
+  not a fixture: a skill presents it as replaceable by the host's declared provenance
+  vocabulary, with the mapping recorded at promotion. **Maturity/confidence** (`✓/~/⚠`,
+  likely-holds/…) is a separate axis; **movability** (provisional, will-move) is structural —
+  where a value lives, not a tag.
 - **Flag, don't decide:** surface findings for the owner to adjudicate; never silently pick a
   winner or edit canonical material without an explicit gate.
 - **Anti-sycophancy:** push back as a peer; steelman, then object, before any endorsement.
