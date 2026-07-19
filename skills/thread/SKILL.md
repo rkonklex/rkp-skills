@@ -124,8 +124,8 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   what sits beneath it; a claim you derived yourself breaks the default and carries its own tag.
 - **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
   and the session's diff, never this chat — flags change-narration and entries that need this
-  session to parse; two low-effort runs of a cheaper model (sonnet-class measured), flags
-  unioned, beat one large run. Fix or
+  session to parse (charge: `LINT.md` beside this skill); two low-effort runs of a cheaper
+  model (sonnet-class measured), flags unioned, beat one large run. Fix or
   escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment". No
   subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
 
