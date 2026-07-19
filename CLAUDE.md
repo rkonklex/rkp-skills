@@ -11,8 +11,8 @@ Working here means **authoring and refining instruction artifacts**, not running
   file to a skill's runtime behavior, or a host's rules to repo edits.
 
 ## Registry sync — forcing function
-A skill is recorded in four places. Any add / rename / remove updates all that apply, in the
-same change:
+A skill is recorded in four places. Any add / rename / remove — and any edit that changes what
+a skill does — updates all that apply, in the same change:
 - `skills/<name>/SKILL.md` — the skill.
 - `README.md` — the catalog row **and** the matching "How they fit together" line.
 - `.claude-plugin/plugin.json` — the `description` if the set's character changed.
