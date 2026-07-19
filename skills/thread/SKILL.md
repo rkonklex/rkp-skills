@@ -35,8 +35,9 @@ sub-threads their own sections; never flatten a real branch):
 
 Status: live | closed(<verdict>)   ·   Grounding: <corpus/code, if any>   ·   Opened: <date>
 
-> Contract: revise in place — a corrected claim is rewritten to current state where it stands,
-> its story goes to the Session log; inline status lines are canonical, Status indexes derive
+> Contract: revise in place — a corrected or updated claim is rewritten to current state where
+> it stands, never old state plus what changed, its story goes to the Session log; inline
+> status lines are canonical, Status indexes derive
 > from them; ids and anchors never change once referenced; tracker items carry their resolver
 > and a state (live / executed / dormant); claims carry origin tags from the set declared here —
 > default [observed] / [inferred] / [domain-knowledge] / [speculation], replaced wholesale when
@@ -97,15 +98,15 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   findings, reshaping layers, changing conventions is a separate deliberate act — route it through
   `/structural-audit` → `/apply-edit`. An integrate that "tidies the structure while at it" is the
   drift this skill exists to kill. *(load-bearing)*
-- **A corrected claim reads as if written today:** the record never asserts what it now knows is
-  false and never narrates its own fixing outside the Session log — no "Correction: … withdrawn"
-  blocks in live sections. Rewrite the claim to current state where it stands (or replace it
-  with a one-line pointer to the superseding finding); the story goes to the Session log.
-  *(load-bearing)*
+- **A corrected or updated claim reads as if written today:** the record never asserts what it
+  now knows is false and never narrates its own fixing outside the Session log. Rewrite the
+  claim to current state where it stands (or replace it with a one-line pointer to the
+  superseding finding); the story goes to the Session log. The test: does the sentence inform a
+  reader who never saw the old state? Provenance stamps ([measured, P6 2026-07-19]) name
+  evidence, not change — they stand. *(load-bearing)*
 - **Cold-safe entries:** the file is the only memory — every entry reads without the session that
   wrote it. Anchor names, parameters, and shorthand at their notation home or expand them in
-  place; re-read this session's writes as the next session would — whatever needs this chat to
-  mean something gets fixed now. *(load-bearing)*
+  place; the fresh-eyes lint below is the check. *(load-bearing)*
 - **One home per fact:** a fact, number, or definition lives at one anchor; every other site
   points instead of restating. New terms anchor in the notation section, not inline at first use.
 - **Sync the derived views:** inline status lines are canonical; the Status table, planned list,
@@ -121,6 +122,11 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
 - **Tag what you add:** every new claim carries its origin from the record's declared set — by
   how you came to hold it, not its inputs. A section default (`[measured unless noted]`) binds
   what sits beneath it; a claim you derived yourself breaks the default and carries its own tag.
+- **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
+  and the session's diff, never this chat — flags change-narration and entries that need this
+  session to parse; two cheap low-effort runs, flags unioned, beat one large run. Fix or
+  escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment". No
+  subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
 
 ## Moves
 - **Open** (user-initiated only): first gate — is this genuinely multi-session? A single-arc idea
