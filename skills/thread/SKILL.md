@@ -20,8 +20,8 @@ corrections appended instead of integrated, history polluting live sections.
   offer once — "worth opening a THREAD record?" — then wait. *(load-bearing)*
 - **The envelope binds writes, not mentions:** if the session only reads or quotes the record
   while working elsewhere, stand down — no envelope, no ceremony. The moment an edit to the record
-  is on the table, the envelope is on: resume before the first write, integrate before the session
-  ends.
+  is on the table, the envelope is on for the rest of the session: resume before the first write,
+  integrate at every checkpoint.
 
 ## The record
 Lives in the work's folder, named `THREAD_<topic>.md`; conform to the host's rules (language,
@@ -35,13 +35,13 @@ sub-threads their own sections; never flatten a real branch):
 
 Status: live | closed(<verdict>)   ·   Grounding: <corpus/code, if any>   ·   Opened: <date>
 
-> Contract: revise in place — a correction lands at the claim it corrects, its story goes to the
-> Session log; inline status lines are canonical, Status indexes derive from them; ids and anchors
-> never change once referenced; tracker items carry their resolver and a state (live / executed /
-> dormant); claims carry origin tags from the set declared here — default [observed] / [inferred] /
-> [domain-knowledge] / [speculation], replaced wholesale when the host has its own provenance
-> classes; narrative history lives only in the Session log. This block binds every session
-> that edits the file, with or without /thread loaded.
+> Contract: revise in place — a corrected claim is rewritten to current state where it stands,
+> its story goes to the Session log; inline status lines are canonical, Status indexes derive
+> from them; ids and anchors never change once referenced; tracker items carry their resolver
+> and a state (live / executed / dormant); claims carry origin tags from the set declared here —
+> default [observed] / [inferred] / [domain-knowledge] / [speculation], replaced wholesale when
+> the host has its own provenance classes; narrative history lives only in the Session log. This
+> block binds every session that edits the file, with or without /thread loaded.
 
 ## What it's for
 <the decision or output the program serves; what "done" looks like>
@@ -72,7 +72,7 @@ Status: <one line: established / open / corrected / superseded-by-Fn, plus the p
 - <absolute date> — <what the session added, moved, corrected; a few lines>
 ```
 
-## The envelope: resume → work → integrate
+## The envelope: resume once, then work ⇄ integrate
 
 **Resume** (before the first write):
 - **Reconstruct, then declare:** read Status, the tracker, and the contract block; open with one
@@ -88,26 +88,31 @@ Status: <one line: established / open / corrected / superseded-by-Fn, plus the p
   opposite extreme — re-derive from what the record needs: which section owns the content, at
   what size, for which future reader. State that derivation before rewriting. *(load-bearing)*
 
-**Integrate** (before the session ends — the envelope is not closed until this runs):
+**Integrate** (at every checkpoint): presenting the record as updated — a mid-session "save
+this, we continue" included — is a checkpoint: a state the next session could cold-resume from,
+and any checkpoint may be the last. The rules below hold at each one; work in progress may be
+transiently inconsistent, a checkpoint may not. An integrate closes nothing — the contract stays
+on for the rest of the session, and the next write arms the next checkpoint. *(load-bearing)*
 - **State authority only:** you may update state; you may not restructure. Renumbering or merging
   findings, reshaping layers, changing conventions is a separate deliberate act — route it through
   `/structural-audit` → `/apply-edit`. An integrate that "tidies the structure while at it" is the
   drift this skill exists to kill. *(load-bearing)*
-- **Correction lands at the claim:** the record never asserts what it now knows is false. Fix the
-  claim where it stands (or replace it with a one-line pointer to the superseding finding); the
-  claim-then-retraction-two-screens-later pattern is banned. The correction's story goes to the
-  Session log. *(load-bearing)*
+- **A corrected claim reads as if written today:** the record never asserts what it now knows is
+  false and never narrates its own fixing outside the Session log — no "Correction: … withdrawn"
+  blocks in live sections. Rewrite the claim to current state where it stands (or replace it
+  with a one-line pointer to the superseding finding); the story goes to the Session log.
+  *(load-bearing)*
 - **Cold-safe entries:** the file is the only memory — every entry reads without the session that
   wrote it. Anchor names, parameters, and shorthand at their notation home or expand them in
-  place; before closing, re-read this session's writes as the next session would — whatever needs
-  this chat to mean something gets fixed now. *(load-bearing)*
+  place; re-read this session's writes as the next session would — whatever needs this chat to
+  mean something gets fixed now. *(load-bearing)*
 - **One home per fact:** a fact, number, or definition lives at one anchor; every other site
   points instead of restating. New terms anchor in the notation section, not inline at first use.
 - **Sync the derived views:** inline status lines are canonical; the Status table, planned list,
-  and any repeated number or rank are derived — bring them to agreement before closing.
-  Recompute, don't carry, every count whose evidence base changed this session.
-- **Paths resolve:** outgoing links and file paths resolve at close — re-path what moved; a
-  broken path blinds the next session.
+  and any repeated number or rank are derived — bring them to agreement. Recompute, don't
+  carry, every count whose evidence base changed this session.
+- **Paths resolve:** outgoing links and file paths resolve at every checkpoint — re-path what
+  moved; a broken path blinds the next session.
 - **Move state through the tracker:** live → executed (with a one-line outcome) or dormant (with
   its wake trigger); resolved items leave live lists — a reader must never filter history out of
   a live list.
