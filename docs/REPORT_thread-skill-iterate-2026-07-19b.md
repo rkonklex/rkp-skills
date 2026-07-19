@@ -173,6 +173,31 @@ benchmarked tier without a phantom affordance).
 - **Pass-2 falsifiers stay armed** where not superseded: checkpoint-scoping held this session
   (the field session recognized the checkpoint); tag-under-`[owner]` did not recur.
 
+## Lessons (meta)
+
+1. **Prose has a measurable behavior-change ceiling.** [inferred] Three recasts of one rule
+   failing on the same class was the signal to stop asking "how to say it stronger" and test
+   whether any wording transfers. The eval localized the behavior change to a single sentence —
+   the cold-reader test, read at write time; an equivalent contract-layer clause transferred
+   nothing (V1: 0/2), markers added nothing (V3). And the ceiling is real: the winning wording
+   still leaks ~1/6 — the remainder belongs to a mechanism, not a stronger adjective.
+2. **Reader-stance invariants cannot be self-checked.** [inferred] A writer cannot un-know its
+   own context, so "re-read as the next session would" was a wish, not a check. This
+   generalizes to every cold-safety contract on artifact-writing skills: enforcement needs
+   actually-fresh context, with judgment calls escalated to the owner.
+3. **A-priori mechanism intuitions lost to measurement, twice.** [observed] "No diff for the
+   linter" — diff-mode won every tier and the feared under-flagging never appeared. "One good
+   run suffices" — single-run variance (7–11/11) dominated the design; unioned cheap runs beat
+   one large. Both reversals came from the owner challenging an unevidenced design assertion;
+   each challenge cost one benchmark axis to settle.
+4. **Updates are sneakier than corrections because the inputs arrive diachronic.** [inferred]
+   Findings naturally come phrased as change ("the earlier counts were artifacts…"); the
+   record contract is a translation task, not transcription. Corrections announce themselves;
+   updates masquerade as additive facts — which is why surface-form bans kept losing.
+5. **Ground truth from field evidence turns wording disputes into evals.** [inferred] The
+   labeled set built from the real diff made rule variants and checker combos scoreable; the
+   V0 baseline validated the eval's discriminating power; the harness re-runs for pass 4.
+
 ## Reviewer checklist — falsifiers for pass 4
 
 - **Gate skipped** — a checkpoint is presented with no lint verdict line.
