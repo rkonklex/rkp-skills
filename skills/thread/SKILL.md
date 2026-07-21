@@ -37,9 +37,12 @@ Status: live | closed(<verdict>)   ·   Grounding: <corpus/code, if any>   ·   
 
 > Contract: revise in place — a corrected or updated claim is rewritten to current state where
 > it stands, never old state plus what changed, its story goes to the Session log; inline
-> status lines are canonical, Status indexes derive
-> from them; ids and anchors never change once referenced; tracker items carry their resolver
-> and a state (live / executed / dormant); claims carry origin tags from the set declared here —
+> status lines are canonical, their keyword drawn from one closed set declared here, and Status
+> indexes derive from them; ids and anchors never change once referenced; tracker items carry
+> their resolver and a state (live / executed / dormant); a finding all of whose tracker items
+> are resolved collapses — owner-confirmed, never unasked — to its kernel, the campaign's story
+> leaving for a `REPORT_`; the Session log keeps its last three entries verbatim, older ones as
+> phase digests; claims carry origin tags from the set declared here —
 > default [observed] / [inferred] / [domain-knowledge] / [speculation], replaced wholesale when
 > the host has its own provenance classes; narrative history lives only in the Session log. This
 > block binds every session that edits the file, with or without /thread loaded.
@@ -59,7 +62,8 @@ Status: live | closed(<verdict>)   ·   Grounding: <corpus/code, if any>   ·   
                                    # conceptual clusters pointing at the frozen ids; never
                                    # renumber to fix reading order
 ### F1 — <title> {#f1}
-Status: <one line: established / open / corrected / superseded-by-Fn, plus the pending resolver>
+Status: <keyword from the record's closed set — default open / established / corrected /
+        closed / superseded-by-Fn — plus the pending resolver>
 <the finding, origin-tagged; corrections integrated at the claim>
 
 ## Work tracker                    # open questions awaiting resolution — question + resolver,
@@ -94,8 +98,9 @@ this, we continue" included — is a checkpoint: a state the next session could 
 and any checkpoint may be the last. The rules below hold at each one; work in progress may be
 transiently inconsistent, a checkpoint may not. An integrate closes nothing — the contract stays
 on for the rest of the session, and the next write arms the next checkpoint. *(load-bearing)*
-- **State authority only:** you may update state; you may not restructure. Renumbering or merging
-  findings, reshaping layers, changing conventions is a separate deliberate act — route it through
+- **State authority only:** you may update state — the contract's owner-confirmed lifecycle
+  moves included; you may not restructure. Renumbering or merging findings, reshaping layers,
+  changing conventions is a separate deliberate act — route it through
   `/structural-audit` → `/apply-edit`. An integrate that "tidies the structure while at it" is the
   drift this skill exists to kill. *(load-bearing)*
 - **A corrected or updated claim reads as if written today:** the record never asserts what it
@@ -117,17 +122,28 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
 - **Move state through the tracker:** live → executed (with a one-line outcome) or dormant (with
   its wake trigger); resolved items leave live lists — a reader must never filter history out of
   a live list.
+- **Collapse what settled — flag, owner decides:** a finding whose last tracker item left the
+  live list is a collapse candidate: flag it at the checkpoint, never collapse unasked. On
+  confirm, this session — while the reasoning is still in its context — writes the campaign's
+  story as a `/report` micro-article (background, reasoning, results, conclusions; an existing
+  report is re-authored as one piece, never appended to) and compresses the findings to
+  kernels: Status line, the claim, the numbers other sections cite, a link to the article. On
+  decline, book a `[dormant]` tracker item naming the wake trigger. Log entries older than the
+  last three roll into phase digests — mechanical, no gate. What no lifecycle rule places books
+  `/structural-audit`, not inline tidying. *(load-bearing)*
 - **Log one entry:** one dated, few-line Session log entry for this session — later additions
   merge into it, never extend it. Status keeps only current state; the log keeps the narrative.
 - **Tag what you add:** every new claim carries its origin from the record's declared set — by
   how you came to hold it, not its inputs. A section default (`[measured unless noted]`) binds
   what sits beneath it; a claim you derived yourself breaks the default and carries its own tag.
+  Compound tags combine declared members only; an evidence stamp may append probe and date;
+  free-text qualifiers go in the sentence, never inside the brackets.
 - **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
-  and the session's diff, never this chat — flags change-narration and entries that need this
-  session to parse (charge: `LINT.md` beside this skill); two low-effort runs of a cheaper
-  model (sonnet-class measured), flags unioned, beat one large run. Fix or
-  escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment". No
-  subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
+  and the session's diff, never this chat — runs the charges in `LINT.md` beside this skill:
+  change-narration, entries that need this session to parse, and added text that doesn't earn
+  its keep; cheap low-effort runs (sonnet-class measured), flags unioned, per the recipe there.
+  Fix or escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment".
+  No subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
 
 ## Moves
 - **Open** (user-initiated only): first gate — is this genuinely multi-session? A single-arc idea

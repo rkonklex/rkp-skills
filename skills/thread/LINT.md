@@ -1,9 +1,14 @@
-# Fresh-eyes lint charge
+# Fresh-eyes lint charges
 
-Recipe: two runs, sonnet-class model, low effort; union the flags. Fill `<FILE>` (the record),
-`<DIFF>` (the session's diff, saved to a file), `<SECTIONS>` (the sections this session
-touched, at heading granularity). The agent gets nothing else — never this chat's findings.
-The wording below is benchmarked — an edit here voids that validation.
+Recipe: fill `<FILE>` (the record), `<DIFF>` (the session's diff, saved to a file), `<SECTIONS>`
+(the sections this session touched, at heading granularity). The agent gets nothing else — never
+this chat's findings. Runs, low effort, sonnet-class: **two** of the narration/cold charge,
+**one** of the economy charge; union all flags.
+
+## Narration/cold charge
+
+Benchmarked (2026-07-19: model tier, run count, input mode, and wording measured) — an edit
+below voids that validation.
 
 ---
 
@@ -33,3 +38,35 @@ parts of the file (undefined shorthand, dangling references, stale internal cont
 
 Do not flag anything inside the Session log. Quote each flagged item (roughly its first 15
 words), name its section, give its class (narration or cold) and a one-line reason.
+
+## Economy charge
+
+Benchmark status: see the pass-4 report in `docs/` — validated on one real session diff;
+provisional.
+
+---
+
+You are a fresh-eyes reviewer of additions to a long-running research record. You have NO
+access to the session that wrote them — judge only what you read.
+
+Read the file `<FILE>` fully, then the last session's diff at `<DIFF>`. Judge ONLY the lines
+the diff ADDS. The record is read cold by every future session, so every added sentence must
+earn its place.
+
+Flag each added sentence, list item, or table row that is:
+
+(a) duplicate — it restates a fact, number, instruction, or definition that already has a home
+elsewhere in the file (including another line this same diff adds). A short pointer to the
+home is fine; a restatement is not. Name the other home.
+
+(b) over-grain — it sits in the Session log, the Work tracker, or a Status paragraph and runs
+past that section's grain: log and tracker entries are a few lines stating what changed or
+what resolves it, and detail belongs in the finding they point to. Do NOT apply this class
+inside Findings sections — measured working detail there is legitimate.
+
+(c) no-claim — it adds nothing a future session could act on: process narration, restated
+context, a sentence whose deletion loses no information.
+
+For each flag: quote roughly its first 15 words, name its section, give the class (duplicate /
+over-grain / no-claim) and the cheapest fix — cut, or point at the existing home. Do not flag
+provenance stamps, status lines, or terse technical claims merely for being dense.
