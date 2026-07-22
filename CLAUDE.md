@@ -10,6 +10,14 @@ Working here means **authoring and refining instruction artifacts**, not running
   points the skill at, governed by that project's own rules (see House voice). Don't apply this
   file to a skill's runtime behavior, or a host's rules to repo edits.
 
+## This repo is public — host material never lands here
+Published on GitHub; the projects the skills run against are not. **No host content enters any
+file here**, `docs/` reports included: no project or document names, no identifiers (finding and
+probe ids, internal versions, file stems), no measured values, no verbatim sentences or chat
+quotes. Describe a field failure by its *class* — "a count re-measured on a grown corpus, the old
+value left beside it" — never by its instance; benchmarks report scores and counts, their
+material staying with the host. Falsifier: grepping this repo for a host's terms returns a hit.
+
 ## Registry sync — forcing function
 A skill is recorded in four places. Any add / rename / remove — and any edit that changes what
 a skill does — updates all that apply, in the same change:
