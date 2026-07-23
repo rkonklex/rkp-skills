@@ -81,17 +81,22 @@ Status: <keyword from the record's closed set — default open / established / c
 
 **Resume** (before the first write):
 - **Reconstruct, then declare:** read Status, the tracker, and the contract block; open with one
-  short paragraph — what is settled (you will not relitigate it), which tracker item this session
-  pulls, and what discipline hosts the reasoning (a named skill, or none).
-- **Re-grounding is not re-litigating:** the record's claims about a corpus or codebase are last
-  session's reading — re-open and quote the source before building on one. Reopening a settled
-  conclusion is the user's move, never yours.
+  short paragraph — which decisions are settled (you will not relitigate them), which carried
+  claims this session builds on, which tracker item it pulls, and what discipline hosts the
+  reasoning (a named skill, or none).
+- **Carried claims are readings, not facts:** the record's claims about a corpus or codebase are
+  last session's reading — no quote from the source, no building on the claim, and a claim
+  presented to the owner unmarked as carried has been asserted, not reported. Re-grounding is
+  not re-litigating: reopening a settled conclusion is the user's move, never yours.
+  *(load-bearing)*
 
 **Work** (while the session runs):
 - **A rejected write resets to purpose:** when the owner rejects a record-keeping decision
   (placement, size, a split), do not patch at the point of rejection and do not swing to the
   opposite extreme — re-derive from what the record needs: which section owns the content, at
   what size, for which future reader. State that derivation before rewriting. *(load-bearing)*
+- **Ids travel with titles:** a finding or probe named in chat carries its title, not the bare
+  id — the owner reads chat without the record open.
 
 **Integrate** (at every checkpoint): presenting the record as updated — a mid-session "save
 this, we continue" included — is a checkpoint: a state the next session could cold-resume from,
@@ -122,6 +127,13 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
 - **Move state through the tracker:** live → executed (with a one-line outcome) or dormant (with
   its wake trigger); resolved items leave live lists — a reader must never filter history out of
   a live list.
+- **Sweep the blast radius — pose, owner decides:** a checkpoint that integrates a substantive
+  new or corrected finding books a consequences sweep — what does this change downstream, which
+  claims elsewhere does it touch? Offer it before the checkpoint; if not taken there, pose it
+  right after the state is saved — the sweep never blocks the save. The owner may wave it off;
+  the hosting discipline does the thinking; yield that belongs in the record enters as a new
+  write. Mechanical checkpoints (log rolls, view syncs, re-pathing) pose no sweep.
+  *(load-bearing)*
 - **Collapse what settled — flag, owner decides:** a finding whose last tracker item left the
   live list is a collapse candidate: flag it at the checkpoint, never collapse unasked. On
   confirm, this session — while the reasoning is still in its context — writes the campaign's
@@ -140,8 +152,9 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   free-text qualifiers go in the sentence, never inside the brackets.
 - **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
   and the session's diff, never this chat — runs the charges in `LINT.md` beside this skill:
-  change-narration, entries that need this session to parse, and added text that doesn't earn
-  its keep; cheap low-effort runs (sonnet-class measured), flags unioned, per the recipe there.
+  change-narration, entries that need this session to parse, added text that doesn't earn its
+  keep, and malformed origin tags; cheap low-effort runs (sonnet-class measured), flags
+  unioned, per the recipe there.
   Fix or escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment".
   No subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
 

@@ -2,13 +2,13 @@
 
 Recipe: fill `<FILE>` (the record), `<DIFF>` (the session's diff, saved to a file), `<SECTIONS>`
 (the sections this session touched, at heading granularity). The agent gets nothing else — never
-this chat's findings. Runs, low effort, sonnet-class: **two** of the narration/cold charge,
-**one** of the economy charge; union all flags.
+this chat's findings. Runs, low effort, sonnet-class — counts fixed, a small diff does not
+shrink the panel: **two** of the narration/cold charge, **one** of the economy charge; union
+all flags.
 
 ## Narration/cold charge
 
-Benchmarked (2026-07-19: model tier, run count, input mode, and wording measured) — an edit
-below voids that validation.
+Benchmarked — an edit below voids that validation.
 
 ---
 
@@ -41,8 +41,7 @@ words), name its section, give its class (narration or cold) and a one-line reas
 
 ## Economy charge
 
-Benchmark status: see the pass-4 report in `docs/` — validated on one real session diff;
-provisional.
+Benchmarked — an edit below voids that validation.
 
 ---
 
@@ -67,6 +66,13 @@ inside Findings sections — measured working detail there is legitimate.
 (c) no-claim — it adds nothing a future session could act on: process narration, restated
 context, a sentence whose deletion loses no information.
 
+(d) malformed tag — a bracketed origin tag whose bracketed content is not built from the
+record's declared tag set (the contract block at the top of the file declares the set): it
+contains free-text words, qualifiers, or ratings that are not declared members. A compound
+of declared members, and an evidence stamp appending a probe id and/or date to a declared
+member, are NOT violations.
+
 For each flag: quote roughly its first 15 words, name its section, give the class (duplicate /
-over-grain / no-claim) and the cheapest fix — cut, or point at the existing home. Do not flag
-provenance stamps, status lines, or terse technical claims merely for being dense.
+over-grain / no-claim / malformed tag) and the cheapest fix — cut, point at the existing home,
+or restate the tag from declared members. Do not flag provenance stamps, status lines, or
+terse technical claims merely for being dense.
