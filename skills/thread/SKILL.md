@@ -20,7 +20,8 @@ corrections appended instead of integrated, history polluting live sections.
   offer once — "worth opening a THREAD record?" — then wait. *(load-bearing)*
 - **The envelope binds writes, not mentions:** if the session only reads or quotes the record
   while working elsewhere, stand down — no envelope, no ceremony. The moment an edit to the record
-  is on the table, the envelope is on for the rest of the session: resume before the first write,
+  is on the table — and only the owner puts it there, directly or through the write mode set at
+  resume — the envelope is on for the rest of the session: resume before the first write,
   integrate at every checkpoint.
 
 ## The record
@@ -83,7 +84,8 @@ Status: <keyword from the record's closed set — default open / established / c
 - **Reconstruct, then declare:** read Status, the tracker, and the contract block; open with one
   short paragraph — which decisions are settled (you will not relitigate them), which carried
   claims this session builds on, which tracker item it pulls, and what discipline hosts the
-  reasoning (a named skill, or none).
+  reasoning (a named skill, or none). One question closes it, asked once: "integrate as we go,
+  or on request?" — unanswered means on-request.
 - **Carried claims are readings, not facts:** the record's claims about a corpus or codebase are
   last session's reading — no quote from the source, no building on the claim, and a claim
   presented to the owner unmarked as carried has been asserted, not reported. Re-grounding is
@@ -95,14 +97,20 @@ Status: <keyword from the record's closed set — default open / established / c
   (placement, size, a split), do not patch at the point of rejection and do not swing to the
   opposite extreme — re-derive from what the record needs: which section owns the content, at
   what size, for which future reader. State that derivation before rewriting. *(load-bearing)*
-- **Ids travel with titles:** a finding or probe named in chat carries its title, not the bare
-  id — the owner reads chat without the record open.
+- **Ids travel with titles:** a finding or probe named in chat — the resume declaration
+  included — carries its title, not the bare id; the owner reads chat without the record open.
 
 **Integrate** (at every checkpoint): presenting the record as updated — a mid-session "save
 this, we continue" included — is a checkpoint: a state the next session could cold-resume from,
 and any checkpoint may be the last. The rules below hold at each one; work in progress may be
 transiently inconsistent, a checkpoint may not. An integrate closes nothing — the contract stays
 on for the rest of the session, and the next write arms the next checkpoint. *(load-bearing)*
+- **The owner arms the checkpoint:** on-request: no write until the owner asks or accepts an
+  offer. Offer in one line naming the scope when a substantive finding settles or is corrected,
+  or at wind-down. After a decline, ask again only when new yield adds or at wind-down; in
+  between, at most a one-line closing note of what stands unwritten — a statement, never a
+  question or an invitation. As-we-go: integrate without asking, report after. Context nearly
+  out: warn and offer once. *(load-bearing)*
 - **State authority only:** you may update state — the contract's owner-confirmed lifecycle
   moves included; you may not restructure. Renumbering or merging findings, reshaping layers,
   changing conventions is a separate deliberate act — route it through
