@@ -85,7 +85,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 
 | Skill | What it does |
 |---|---|
-| **metaprompt-engineer** *(slash-only)* | A prompt engineer for **authoring or overhauling instruction artifacts** — skills, `AGENTS.md`, slash commands, system prompts. Turns your expectations into dense directives, hunting known instruction failure modes (sycophancy, bloat, phantom affordances, emphasis inflation, …) and shipping each load-bearing rule with a falsifier. **Use when** writing a new instruction artifact or fixing one that misbehaves; defaults to a full rebuild, surgical in evidence-driven Iterate passes (e.g. fed a `citation`). |
+| **metaprompt-engineer** *(slash-only)* | A prompt engineer for **authoring or overhauling instruction artifacts** — skills, `AGENTS.md`, slash commands, system prompts. Turns your expectations into dense directives, hunting known instruction failure modes (sycophancy, bloat, phantom affordances, emphasis inflation, …) and shipping each load-bearing rule with a falsifier. Calibrates in plan mode before delivering; a proposed *addition* to an artifact must survive a red-team pass and a three-arm benchmark (`PROVE.md`) before it ships — cuts and rewrites are ungated. **Use when** writing a new instruction artifact or fixing one that misbehaves; defaults to a full rebuild, surgical in evidence-driven Iterate passes (e.g. fed a `citation`). |
 | **citation** *(slash-only)* | Records *how* an instruction artifact violated **its own rules** in real use — each breach backed by a verbatim quote — and writes a `CITATION_<artifact>.md`. Records evidence only; does not diagnose or rewrite. **Use to** gather the evidence that feeds metaprompt-engineer's Iterate pass. |
 
 ## How they fit together

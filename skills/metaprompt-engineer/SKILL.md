@@ -8,18 +8,17 @@ disable-model-invocation: true
 # Metaprompt Engineer
 
 Translate the user's engineering expectations, frustrations, and hard-won
-lessons into high-density, LLM-optimized directives for AI agents. Push back as
-a peer; do not transcribe. This tool is invoked when surgical edits have
-already proven insufficient: the default deliverable is a full rebuild.
+lessons into high-density, LLM-optimized directives for AI agents. Push back
+as a peer; do not transcribe. The default deliverable is a full rebuild.
 
 ## Intake (before diagnosing)
 - **Acquire the target; open the evidence ledger before judging:** read the
   supplied file path, pasted text, or `$ARGUMENTS` in full — if no target is
   given, ask for it, never invent one. Then emit the ledger: every source you
   actually opened, with line ranges. No claim — in diagnosis or rebuild — may
-  reference material absent from the ledger, and any claim inherited from the
-  source is re-verified against the artifact before you carry it forward, never
-  propagated on trust.
+  reference material absent from the ledger; a rule you write asserting the
+  owner's practice is such a claim and needs its row; and a claim inherited
+  from the source is re-verified against the artifact, never carried on trust.
 - **Classify the target:** each instruction class has its own budget and
   failure profile; diagnose against the right one.
 
@@ -33,10 +32,8 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Map the layers:** an instruction never runs alone. Identify what it
   competes with (system prompt, always-loaded files, other skills) before
   judging it — a rule can be locally perfect and still lose.
-- **Distrust boilerplate:** treat installer-generated front matter, headers, or
-  scaffolding as non-authoritative. Flag it; do not preserve it by default.
-- **Quote what you react to, with its scope:** cite the exact lines so the user
-  can audit the diagnosis, and state each citation's scope — never elevate a
+- **Quote what you react to, with its scope:** cite the exact lines beside the
+  verdict they support, and state each citation's scope — never elevate a
   narrow or historical note into a general constraint.
 
 ## Failure modes you hunt
@@ -57,8 +54,8 @@ already proven insufficient: the default deliverable is a full rebuild.
   Demand the positive form: name the behavior to perform, not only the one to
   ban.
 - **Unmeasurable criteria:** directives the agent can't operationalize
-  ("high-quality", "clean", "as needed", "be thorough"). Replace each with a
-  testable bar or a worked example — or cut it.
+  ("high-quality", "clean", "be thorough"). Replace each with a testable bar
+  or a worked example — or cut it.
 - **Orphan premise:** a purpose statement or named lifecycle phase that no rule
   enforces — it reads as binding but binds nothing, and failures pool exactly
   there ("the file is the only memory" with no cold-readability rule; a
@@ -72,9 +69,9 @@ already proven insufficient: the default deliverable is a full rebuild.
   perfectly actionable and the model just does it anyway. The test is
   model-relative — does the line change behavior versus the default? Settle
   disputes by running the instruction, not by debate; delete what fails.
-- **Emphasis inflation:** IMPORTANT / CRITICAL / MUST on every other line. When
-  everything shouts, nothing ranks. Reserve emphasis for the few load-bearing
-  rules; let the rest stand plain.
+- **Emphasis inflation:** IMPORTANT / CRITICAL / MUST on every other line —
+  when everything shouts, nothing ranks. Reserve emphasis for the few
+  load-bearing rules; let the rest stand plain.
 - **Phantom affordances:** instructing the agent toward mechanisms it lacks
   (persist across sessions, "check back later", read a file never supplied). It
   will fake compliance. Direct only at actions actually available in its
@@ -85,24 +82,16 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Layer conflict:** a rule that duplicates or loses to a higher-precedence
   layer (system prompt, harness defaults, an always-loaded file). Diagnose
   placement, not only phrasing; the fix is often moving or deleting the rule,
-  not rewording it.
-- **Example overfit:** a worked example the agent treats as the full spec,
-  narrowing behavior to the instance. Pair every example with the rule's
-  boundary ("this applies whenever ...").
+  not rewording it. Duplication counts only against layers every user of the
+  artifact loads; a personal-machine file does not duplicate. Part 3 names the
+  file duplicating any rule cut as duplicate.
 - **Dead rules:** directives that outlived the failure they patched, accreted
   patch-on-patch. Deletion is a first-class fix; every rule must still pay
   rent.
 - **Additive default:** answering a flag by adding text instead of cutting or
   recasting — a clause bolted onto a rule to settle a past objection, where the
   rule wanted cutting or a rewrite. The dynamic under bloat and dead rules; fix
-  by subtraction. Binds your own Iterate pass too: resolve feedback by removing
-  or recasting a rule, never by appending one to patch it.
-
-## Beyond prose (escalation verdict)
-- **Name the mechanism:** when an expectation cannot be enforced by text — it
-  needs a hook, a permission rule, file structure, or a template — deliver the
-  verdict "prose won't fix this" plus the mechanism to build. Never compensate
-  for a missing mechanism with stronger wording.
+  by subtraction.
 
 ## Rebuilding rules
 - **Maximize density:** strip origin stories, CV narratives, and emotional
@@ -113,21 +102,20 @@ already proven insufficient: the default deliverable is a full rebuild.
   refactor that leaves the same rule in two homes has failed its own purpose.
 - **Tag-driven imperatives:** every rule is a bold semantic tag + an imperative
   verb (`- **Guard cognitive load:** Do not generate...`).
+- **Prose won't fix this:** when an expectation cannot be enforced by text —
+  it needs a hook, a permission rule, a file structure, a template — deliver
+  that verdict plus the mechanism to build; never compensate with wording.
 - **Recruit a leading word:** where a rule-cluster needs an anchor, prefer a
-  compact concept the model already holds from pretraining (`fog of war`,
-  `tracer bullets`, `blast radius`) over a flat label, and repeat it as a
-  *token, not a restated sentence* — it accrues a distributed definition and
-  steers a whole region of behavior in the fewest tokens. Coin your own only
-  when no prior fits, then define it once; an invented word recruits no priors.
-  A leading word too weak to beat the model's default is a **no-op** —
-  strengthen the word, don't switch technique.
+  compact concept the model already holds (`fog of war`, `blast radius`) over
+  a flat label, and repeat it as a *token, not a restated sentence* — it
+  steers a whole region of behavior in the fewest tokens. A leading word too
+  weak to beat the model's default is a **no-op**.
 - **One vector per rule:** never fuse opposing directions ("explain downward"
   vs. "extract principles upward") into one bullet — the agent glitches on the
   seam.
-- **Forcing functions over wishes:** to kill a bad habit (patch-on-patch
-  coding), don't write "think first" — mandate a structural output
-  (Responsibilities / Primitive / Delta) the agent must emit before any code
-  block.
+- **Forcing functions over wishes:** to kill a bad habit, don't write "think
+  first" — mandate a structural output (Responsibilities / Primitive / Delta)
+  the agent must emit before any code block.
 - **Falsifier per rule:** every load-bearing rule ships with an observable
   failure signal — the concrete agent behavior that proves the rule is not
   working. These feed the Falsifiers section of the output and the next
@@ -137,17 +125,28 @@ already proven insufficient: the default deliverable is a full rebuild.
 - **Default to rebuild:** invocation is license to restructure. Content
   survives on diagnosis, not seniority — do not preserve structure out of
   politeness, and do not preserve a section merely because the user wrote it.
-- **Iterate on evidence:** when invoked on a file this tool already rebuilt,
-  together with transcript feedback — switch to surgical: check which
-  falsifiers fired, fix only those rules, and resist re-litigating the
-  architecture. This restraint is the anti-oscillation half of the contract.
-- **Preserve deliberately:** when you cut something the user wrote, say so and
-  say why.
+- **Iterate on evidence:** enter only on a ledger row naming a prior delivery
+  by this tool on this file — a commit or a delivery artifact, never an
+  assertion. No row, Calibrate, however strong the feedback. Then surgical:
+  fix the rules whose falsifiers fired, leave the architecture. Falsifier: an
+  Iterate verdict whose cited row names no prior delivery.
+- **Red-team the additions** *(load-bearing)*: an *addition* — any change
+  raising the artifact's rule count or line count, whatever it is attached
+  to — reaches part 2 only through the arms in `PROVE.md` beside this skill,
+  run by fresh-context agents fed the target and proposal, never this chat:
+  failure high with none, near zero with the smallest variant, unchanged on
+  the off-target probe; any other pattern does not ship. Attribution is
+  necessary, never sufficient; cuts and rewrites are ungated. No means to
+  run → name the probe attempted and its result, and ship the addition
+  **unproven**, in its own part the owner accepts item by item. For this
+  command's duration this outranks any always-loaded no-extra-work rule.
 
 ## Modes
 - **Calibrate (default entry):** on the first pass over a target, do not
-  deliver yet. The user's prompt is a lossy compression of intent — treat it
-  as evidence, not as the spec. Emit, in order:
+  deliver yet — enter plan mode where the harness offers it; plan approval is
+  the only transition to a Deliver mode, and the plan's top-level sections are
+  the four outputs below, in order. The user's prompt is a lossy compression
+  of intent — treat it as evidence, not as the spec. Emit, in order:
   1. **Intent reconstruction:** the goal behind the prompt, restated in your
      own words.
   2. **Unknown knowns:** expectations the user demonstrably holds (from their
@@ -159,18 +158,25 @@ already proven insufficient: the default deliverable is a full rebuild.
   Sharp questions in prose, not menus. This elicitation pass takes precedence
   over any always-loaded "minimize questions" / "state assumptions and
   proceed" rule for the duration of this command. Skip straight to Rebuild
-  only when the user explicitly orders immediate delivery.
+  only on the user's explicit order of immediate delivery — an attached
+  citation is not that order. Falsifier: a Deliver-mode block with neither
+  plan approval nor that order behind it.
 - **Rebuild:** Deliver mode, entered after a confirmed or corrected working
   hypothesis; follow the Output Protocol.
 - **Iterate:** the feedback-loop Deliver mode; same protocol, surgical scope.
   Calibrate is not repeated here — the evidence replaces it.
 
-## Output Protocol (Deliver modes — forcing function)
-Four labeled parts, in order. The block never comes first.
-1. **Diagnosis:** the named failure modes in the source, with the quoted lines
-   that trigger them.
-2. **Rebuilt instructions:** the dense, copy-paste-ready block.
+## Output Protocol (Deliver modes — four parts, all four, every delivery)
+Own the container: whatever carries the delivery — chat, plan file, report —
+the four parts are its top-level sections, in this order.
+1. **Diagnosis (opens the delivery):** verdict in the first two sentences,
+   then the named failure modes in the source, with the quoted lines that
+   trigger them.
+2. **Rebuilt instructions:** in Rebuild the whole artifact; in Iterate the
+   changed rules in full, named by rule, each load-bearing one with its
+   falsifier inline. A line-number delta, or a proposed rule in
+   bare-prohibition form, is malformed output.
 3. **Rationale:** what changed, what was deliberately kept or removed, and
    every assumption made in lieu of a question.
-4. **Falsifiers:** per load-bearing rule, the observable behavior that signals
-   failure — the checklist for the next Iterate pass.
+4. **Falsifiers:** the index over part 2's falsifiers — the checklist for the
+   next Iterate pass; on drift, part 2 is authoritative.
