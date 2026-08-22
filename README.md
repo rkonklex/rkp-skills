@@ -81,6 +81,12 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 | **epistemic-audit** *(slash-only)* | Is the model **complete and correct** as a description of the real subject? Reconstructs the implicit model, then attacks it from first principles — gaps, load-bearing assumptions, frame challenges. Not a consistency check. |
 | **structural-audit** *(slash-only)* | Is the content **in the right place and well-layered**? Auto-detects mode: a directory → architecture audit (inter-document placement and boundaries); a file → document audit (intra-document readability/layering). Produces a concrete restructuring plan as a handoff for another agent to execute. |
 
+### Put a claim batch on trial
+
+| Skill | What it does |
+|---|---|
+| **tribunal** *(slash-only)* | A **refutation gate between a batch of your session's claims and you**. The producing session packages its claims as a cold-safe, provenance-only dossier; a cold orchestrator builds a bench of fresh-context reviewers (one per failure family, briefed to refute, verdicts *refuted / survives-weakened / survives*); the session relays the verdicts verbatim — reviewer-built improvements included. **Use after** a session produces a batch of substantive claims, before they reach you or a durable record — and unconditionally when you've stopped trusting a claim series. |
+
 ### Engineer the instructions themselves
 
 | Skill | What it does |
@@ -98,6 +104,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
 - **structural-audit** emits a restructuring plan that **apply-edit** can carry out.
 - **consistency-audit** and **epistemic-audit** flag findings; the owner adjudicates — pressure-testing a single finding with **attack-duck** when it's in doubt — then routes the ones he accepts through **handoff-edit** → **apply-edit**.
+- **tribunal** gates a session's claim batch before it reaches the owner or a record: refuted claims never enter a **thread**/**report**, survives-weakened only with the weakening attached.
 - **citation** captures an artifact's failures; **metaprompt-engineer** rebuilds the artifact (these skills included).
 
 ## Structure
