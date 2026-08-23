@@ -2,9 +2,10 @@
 
 Recipe: fill `<FILE>` (the record), `<DIFF>` (the session's diff, saved to a file), `<SECTIONS>`
 (the sections this session touched, at heading granularity). The agent gets nothing else — never
-this chat's findings. Runs, low effort, sonnet-class — counts fixed, a small diff does not
-shrink the panel: **two** of the narration/cold charge, **one** of the economy charge; union
-all flags.
+this chat's findings. Runs, low effort, sonnet-class — benchmarked; an edit to these parameters
+voids that validation. Counts fixed, a small diff does not shrink the panel: **two** of the
+narration/cold charge, **one** of the economy charge; union all flags across one frozen state —
+the panel launches together and the record does not change until every agent has returned.
 
 ## Narration/cold charge
 
@@ -48,9 +49,9 @@ Benchmarked — an edit below voids that validation.
 You are a fresh-eyes reviewer of additions to a long-running research record. You have NO
 access to the session that wrote them — judge only what you read.
 
-Read the file `<FILE>` fully, then the last session's diff at `<DIFF>`. Judge ONLY the lines
-the diff ADDS. The record is read cold by every future session, so every added sentence must
-earn its place.
+Read the file `<FILE>` fully, then the last session's diff at `<DIFF>`. Judge the lines the diff
+ADDS; read its removals only to detect class (e). The record is read cold by every future
+session, so every added sentence must earn its place.
 
 Flag each added sentence, list item, or table row that is:
 
@@ -72,7 +73,12 @@ contains free-text words, qualifiers, or ratings that are not declared members. 
 of declared members, and an evidence stamp appending a probe id and/or date to a declared
 member, are NOT violations.
 
+(e) relocated — the diff removes text under one finding id or heading and adds materially the
+same text under another. Name both sites. NOT violations: a claim rewritten in place, a
+one-line pointer replacing a superseded claim, a confirmed collapse moving prose to a report
+article, and narrative moving into the Session log.
+
 For each flag: quote roughly its first 15 words, name its section, give the class (duplicate /
-over-grain / no-claim / malformed tag) and the cheapest fix — cut, point at the existing home,
-or restate the tag from declared members. Do not flag provenance stamps, status lines, or
-terse technical claims merely for being dense.
+over-grain / no-claim / malformed tag / relocated) and the cheapest fix — cut, point at the
+existing home, or restate the tag from declared members. Do not flag provenance stamps, status
+lines, or terse technical claims merely for being dense.

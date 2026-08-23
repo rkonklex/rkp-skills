@@ -97,8 +97,10 @@ Status: <keyword from the record's closed set — default open / established / c
   (placement, size, a split), do not patch at the point of rejection and do not swing to the
   opposite extreme — re-derive from what the record needs: which section owns the content, at
   what size, for which future reader. State that derivation before rewriting. *(load-bearing)*
-- **Ids travel with titles:** a finding or probe named in chat — the resume declaration
-  included — carries its title, not the bare id; the owner reads chat without the record open.
+- **Chat stands alone:** the owner works from chat and rarely opens the record — say in chat, in
+  substance, anything he must know, decide or act on, a tracker item whose resolver is his input
+  included, when you book it. A finding or probe named in chat carries its title on first mention
+  in a reply — the resume declaration included — not the bare id.
 
 **Integrate** (at every checkpoint): presenting the record as updated — a mid-session "save
 this, we continue" included — is a checkpoint: a state the next session could cold-resume from,
@@ -111,11 +113,11 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   between, at most a one-line closing note of what stands unwritten — a statement, never a
   question or an invitation. As-we-go: integrate without asking, report after. Context nearly
   out: warn and offer once. *(load-bearing)*
-- **State authority only:** you may update state — the contract's owner-confirmed lifecycle
-  moves included; you may not restructure. Renumbering or merging findings, reshaping layers,
-  changing conventions is a separate deliberate act — route it through
-  `/structural-audit` → `/apply-edit`. An integrate that "tidies the structure while at it" is the
-  drift this skill exists to kill. *(load-bearing)*
+- **State authority only:** add material and rewrite claims where they stand — the contract's
+  lifecycle moves included. Text the record still asserts keeps its home; only the correction
+  rule, retiring a claim as false, moves it out — and ids, sections and conventions hold. Need a
+  structural move: stop, say it, and book a `[dormant]` tracker item naming the defect and its
+  sections, waking when the owner restructures. *(load-bearing)*
 - **A corrected or updated claim reads as if written today:** the record never asserts what it
   now knows is false and never narrates its own fixing outside the Session log. Rewrite the
   claim to current state where it stands (or replace it with a one-line pointer to the
@@ -143,14 +145,15 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   write. Mechanical checkpoints (log rolls, view syncs, re-pathing) pose no sweep.
   *(load-bearing)*
 - **Collapse what settled — flag, owner decides:** a finding whose last tracker item left the
-  live list is a collapse candidate: flag it at the checkpoint, never collapse unasked. On
+  live list is a collapse candidate — an item is the finding's only if it resolves it; a mention
+  elsewhere does not keep it live. Flag it at the checkpoint, never collapse unasked. On
   confirm, this session — while the reasoning is still in its context — writes the campaign's
   story as a `/report` micro-article (background, reasoning, results, conclusions; an existing
   report is re-authored as one piece, never appended to) and compresses the findings to
   kernels: Status line, the claim, the numbers other sections cite, a link to the article. On
   decline, book a `[dormant]` tracker item naming the wake trigger. Log entries older than the
-  last three roll into phase digests — mechanical, no gate. What no lifecycle rule places books
-  `/structural-audit`, not inline tidying. *(load-bearing)*
+  last three roll into phase digests — mechanical, no gate. What no lifecycle rule places stays
+  put — say it and book a tracker item naming it, never tidy inline. *(load-bearing)*
 - **Log one entry:** one dated, few-line Session log entry for this session — later additions
   merge into it, never extend it. Status keeps only current state; the log keeps the narrative.
 - **Tag what you add:** every new claim carries its origin from the record's declared set — by
@@ -158,13 +161,19 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   what sits beneath it; a claim you derived yourself breaks the default and carries its own tag.
   Compound tags combine declared members only; an evidence stamp may append probe and date;
   free-text qualifiers go in the sentence, never inside the brackets.
+- **The diff is generated, never written:** produce the gate's `<DIFF>` mechanically — the current
+  file against a baseline captured before this session's first write (version control, or a copy
+  taken then), the baseline advancing to each state a lint passed — feed it whole, and derive
+  `<SECTIONS>` from its hunks. Cannot produce it? Say so; the gate did not run. *(load-bearing)*
 - **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
   and the session's diff, never this chat — runs the charges in `LINT.md` beside this skill:
   change-narration, entries that need this session to parse, added text that doesn't earn its
-  keep, and malformed origin tags; cheap low-effort runs (sonnet-class measured), flags
-  unioned, per the recipe there.
-  Fix or escalate; report with the checkpoint: "lint: clean" / "N fixed, M for your judgment".
-  No subagent affordance → say so and lint yourself in a separate pass. *(load-bearing)*
+  keep, and malformed origin tags — per the recipe there.
+  Fix or escalate; report with the checkpoint: "lint: clean", or the escalations themselves —
+  quoted, not counted.
+  Cannot run the agents — no affordance, or spawning blocked → no checkpoint: report the blocker,
+  and mark this session's log entry unlinted so a cold resume sees it; the owner lifts the block
+  or accepts the record unlinted. Never substitute a self-lint. *(load-bearing)*
 
 ## Moves
 - **Open** (user-initiated only): first gate — is this genuinely multi-session? A single-arc idea
@@ -175,8 +184,9 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   agreement or spec that fits one entry never splits; its home is a finding or an asset line.
   Spin the outgrown sub-thread off (`/handoff` for work to execute elsewhere; a new THREAD for a
   program of its own) and book both sides: the child names its
-  parent; the parent keeps a pointer with a state (`spun-off` / `parked` — parked entries carry a
-  resume anchor: pick up here, by doing this).
+  parent; the parent keeps a pointer that states, never narrates: `in: <child THREAD>` for a
+  program living elsewhere, `handed-off: <HANDOFF file>` for work awaiting execution there,
+  `parked` — parked entries carry a resume anchor: pick up here, by doing this.
 - **Close:** the program reached its verdict or died. Set the terminal Status, then exit through
   the existing tools: `/report` for the auditable record; promotion of content into a canonical
   corpus is prepared here as a reconciliation checklist (notation and tag→provenance mappings,
