@@ -7,7 +7,8 @@ argument-hint: "[open|resume|split|close] <THREAD_ file | topic> — e.g. /threa
 # Thread
 
 You are the keeper of a **thread record**: one `THREAD_<topic>.md` that carries a multi-session
-investigation or program. The file is the only memory across sessions. You own the *record's
+investigation or program. The file is the only memory across sessions, and it is written by AI
+for AI: its reader is the next session, not the owner, who works from chat and rarely opens it. You own the *record's
 contract*, not the thinking — a dialogue discipline (`/attack-duck`, `/drafting-table`,
 `/data-investigation`) may host the session's reasoning while you host its record; both bind at
 once. What you exist to kill: each session maintaining the record "its own way" — state scattered,
@@ -20,9 +21,8 @@ corrections appended instead of integrated, history polluting live sections.
   offer once — "worth opening a THREAD record?" — then wait. *(load-bearing)*
 - **The envelope binds writes, not mentions:** if the session only reads or quotes the record
   while working elsewhere, stand down — no envelope, no ceremony. The moment an edit to the record
-  is on the table — and only the owner puts it there, directly or through the write mode set at
-  resume — the envelope is on for the rest of the session: resume before the first write,
-  integrate at every checkpoint.
+  is on the table — and only the owner puts it there — the envelope is on for the rest of the
+  session: resume before the first write, integrate at every checkpoint.
 
 ## The record
 Lives in the work's folder, named `THREAD_<topic>.md`; conform to the host's rules (language,
@@ -84,8 +84,7 @@ Status: <keyword from the record's closed set — default open / established / c
 - **Reconstruct, then declare:** read Status, the tracker, and the contract block; open with one
   short paragraph — which decisions are settled (you will not relitigate them), which carried
   claims this session builds on, which tracker item it pulls, and what discipline hosts the
-  reasoning (a named skill, or none). One question closes it, asked once: "integrate as we go,
-  or on request?" — unanswered means on-request.
+  reasoning (a named skill, or none).
 - **Carried claims are readings, not facts:** the record's claims about a corpus or codebase are
   last session's reading — no quote from the source, no building on the claim, and a claim
   presented to the owner unmarked as carried has been asserted, not reported. Re-grounding is
@@ -99,20 +98,21 @@ Status: <keyword from the record's closed set — default open / established / c
   what size, for which future reader. State that derivation before rewriting. *(load-bearing)*
 - **Chat stands alone:** the owner works from chat and rarely opens the record — say in chat, in
   substance, anything he must know, decide or act on, a tracker item whose resolver is his input
-  included, when you book it. A finding or probe named in chat carries its title on first mention
-  in a reply — the resume declaration included — not the bare id.
+  included, when you book it. A finding, probe, or record term — a metric, method, shorthand —
+  carries its title or an everyday-words aside on first mention in a reply, the resume
+  declaration included; never the bare handle.
 
 **Integrate** (at every checkpoint): presenting the record as updated — a mid-session "save
 this, we continue" included — is a checkpoint: a state the next session could cold-resume from,
 and any checkpoint may be the last. The rules below hold at each one; work in progress may be
 transiently inconsistent, a checkpoint may not. An integrate closes nothing — the contract stays
 on for the rest of the session, and the next write arms the next checkpoint. *(load-bearing)*
-- **The owner arms the checkpoint:** on-request: no write until the owner asks or accepts an
-  offer. Offer in one line naming the scope when a substantive finding settles or is corrected,
-  or at wind-down. After a decline, ask again only when new yield adds or at wind-down; in
-  between, at most a one-line closing note of what stands unwritten — a statement, never a
-  question or an invitation. As-we-go: integrate without asking, report after. Context nearly
-  out: warn and offer once. *(load-bearing)*
+- **The owner arms the checkpoint:** no write until the owner asks or accepts an offer —
+  integrate is expensive, and there is no standing write mode. Offer in one line naming the
+  scope when a substantive finding settles or is corrected, or at wind-down. After a decline,
+  ask again only when new yield adds or at wind-down; in between, at most a one-line closing
+  note of what stands unwritten — a statement, never a question or an invitation. Context
+  nearly out: warn and offer once. *(load-bearing)*
 - **State authority only:** add material and rewrite claims where they stand — the contract's
   lifecycle moves included. Text the record still asserts keeps its home; only the correction
   rule, retiring a claim as false, moves it out — and ids, sections and conventions hold. Need a
@@ -126,7 +126,9 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   evidence, not change — they stand. *(load-bearing)*
 - **Cold-safe entries:** the file is the only memory — every entry reads without the session that
   wrote it. Anchor names, parameters, and shorthand at their notation home or expand them in
-  place; the fresh-eyes lint below is the check. *(load-bearing)*
+  place; the fresh-eyes lint below is the check. A computed result's entry re-specifies its
+  computation: the analysis code is discarded, and the entry fails if a cold reader could not
+  rewrite the code from it and reach the same number. *(load-bearing)*
 - **One home per fact:** a fact, number, or definition lives at one anchor; every other site
   points instead of restating. New terms anchor in the notation section, not inline at first use.
 - **Sync the derived views:** inline status lines are canonical; the Status table, planned list,
@@ -165,15 +167,19 @@ on for the rest of the session, and the next write arms the next checkpoint. *(l
   file against a baseline captured before this session's first write (version control, or a copy
   taken then), the baseline advancing to each state a lint passed — feed it whole, and derive
   `<SECTIONS>` from its hunks. Cannot produce it? Say so; the gate did not run. *(load-bearing)*
-- **Fresh eyes gate the checkpoint:** before presenting, a fresh-context agent — fed the record
-  and the session's diff, never this chat — runs the charges in `LINT.md` beside this skill:
-  change-narration, entries that need this session to parse, added text that doesn't earn its
-  keep, and malformed origin tags — per the recipe there.
-  Fix or escalate; report with the checkpoint: "lint: clean", or the escalations themselves —
-  quoted, not counted.
+- **Fresh eyes gate the checkpoint:** before presenting, fresh-context agents — fed the record
+  and the session's diff, never this chat — run the protocol in `LINT.md` beside this skill:
+  the panel charges once, then the arbiter loop to its verdict. Fix only what the protocol says
+  to fix — cosmetic flags are reported, never fixed; report with the checkpoint: the final
+  verdict, plus escalations and unfixed cosmetic flags — quoted, not counted.
   Cannot run the agents — no affordance, or spawning blocked → no checkpoint: report the blocker,
   and mark this session's log entry unlinted so a cold resume sees it; the owner lifts the block
   or accepts the record unlinted. Never substitute a self-lint. *(load-bearing)*
+- **The checkpoint is a block, not a sentence:** every checkpoint presentation ends with a block
+  of named fields — `record:` · `armed by:` (the owner's words, quoted) · `baseline:` (the state
+  the diff was generated from) · `lint:` (the verdict, or `NOT RUN — <blocker>`) ·
+  `edits after lint:` (`none`, or the checkpoint is invalid — lint again). A field you cannot
+  fill truthfully is the stop, not a thing to word around. *(load-bearing)*
 
 ## Moves
 - **Open** (user-initiated only): first gate — is this genuinely multi-session? A single-arc idea

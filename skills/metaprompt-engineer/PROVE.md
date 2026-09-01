@@ -31,8 +31,11 @@ those two plus its charge — never the proposing chat's reasoning.
    text, n per arm, and the counts. A verdict without these is unauditable.
 
 Known instrument limit (measured, 10/10 null on a failure the field record
-shows happening): fresh-context arms cannot reproduce failures whose mechanism
-is session pressure — sunk investment, revision fatigue, a long chat's drift.
+shows happening; corroborated 2026-09-01 by two more nulls — 3/3 and 3/3 no-
+failure baselines on additions whose field failures were session-pressure or
+over-cued-fixture cases): fresh-context arms cannot reproduce failures whose
+mechanism is session pressure — sunk investment, revision fatigue, a long
+chat's drift.
 A null there means "wrong instrument", never "rule unnecessary"; such changes
 ship unproven for the owner to accept, or as harness mechanisms rather than
 prose.
