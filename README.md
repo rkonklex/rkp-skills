@@ -80,7 +80,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 |---|---|
 | **consistency-audit** *(slash-only)* | Do the documents **agree**? Finds contradictions, drift, broken cross-references, and breaches of the corpus's own declared rules — within and between docs. Reports findings for the owner to adjudicate; does not pick a winner. |
 | **epistemic-audit** *(slash-only)* | Is the model **complete and correct** as a description of the real subject? Reconstructs the implicit model, then attacks it from first principles — gaps, load-bearing assumptions, frame challenges. Not a consistency check. |
-| **structural-audit** *(slash-only)* | Is the content **in the right place and well-layered**? Auto-detects mode: a directory → architecture audit (inter-document placement and boundaries); a file → document audit (intra-document readability/layering). Produces a concrete restructuring plan as a handoff for another agent to execute. |
+| **structural-audit** *(slash-only)* | Is the content **where its own contract says it belongs**? Harvests the document's declared purpose, reader and rules (plus the corpus's role table), then flags seven defect classes — misplacement, contract breach, grain and proportion, dependency order, duplication, stock rot, orphan or empty home — each with a contract line and an observable signal. A file audits the document against its corpus; a directory audits the corpus. Emits an indexed findings table the owner accepts by handle and an evidence-carrying move plan for **apply-edit**; saves as `AUDIT_structure-<topic>.md` on request. |
 
 ### Put a claim batch on trial
 
@@ -104,7 +104,7 @@ rewrite (a `--fix` flag does mechanical-only repairs where offered).
 - **memento** re-orients the owner mid-program: run it just before a write to expose what the record is about to lose; what it surfaces feeds a **thread** checkpoint, a **report**, or a **handoff** — it never writes anything itself.
 - **handoff-edit** → **apply-edit** is its own author→receiver pair for changes to critical documents.
 - **data-investigation** runs the probe loop, then closes out through `handoff` and `report`.
-- **structural-audit** emits a restructuring plan that **apply-edit** can carry out.
+- **structural-audit** flags placement, grain, order, duplication, rot and orphan defects against the document's own contract; the owner accepts findings by handle, and the move plan for those goes to **apply-edit**.
 - **consistency-audit** and **epistemic-audit** flag findings; the owner adjudicates — pressure-testing a single finding with **attack-duck** when it's in doubt — then routes the ones he accepts through **handoff-edit** → **apply-edit**.
 - **tribunal** gates a session's claim batch before it reaches the owner or a record: refuted claims never enter a **thread**/**report**, survives-weakened only with the weakening attached.
 - **citation** captures an artifact's failures; **metaprompt-engineer** rebuilds the artifact (these skills included).
